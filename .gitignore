@@ -48,7 +48,9 @@ local.properties
 ##########
 ## Netbeans
 ###########
+build/web/
 build/
+
 nbproject/private
 
 
