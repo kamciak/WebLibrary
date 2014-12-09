@@ -49,6 +49,7 @@ local.properties
 ## Netbeans
 ###########
 build/
+nbproject/private
 
 
 # External tool builders
