@@ -25,7 +25,7 @@ public class RegisterController extends SimpleFormController {
 
         setCommandClass(User.class);
         setCommandName("user");
-        setSuccessView("userRegistrationSuccesView");
+        setSuccessView("userRegistrationSuccessView");
         setFormView("userRegistrationView");
     }
 
