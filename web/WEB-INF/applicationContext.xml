@@ -28,6 +28,14 @@
         <property name="username" value="app"/>
         <property name="password" value="app"/>
     </bean>
+    
+    <bean id="userDAO" class="DAO.UserDAO">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    
+    <bean name="universalService" class="service.UniversalService">
+        <property name="userDAO" ref="userDAO"/>
+    </bean>
 
 
 </beans>

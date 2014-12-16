@@ -6,18 +6,22 @@
 package WebsiteControllers;
 
 import UserPackage.User;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.validation.BindException;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.SimpleFormController;
+import service.UniversalService;
+
 
 /**
  *
  * @author Kamciak
  */
 public class RegisterController extends SimpleFormController {
+    
+    private UniversalService universalService;
+
     
     public RegisterController() {
         //Initialize controller properties here or 
@@ -35,6 +39,7 @@ public class RegisterController extends SimpleFormController {
         ModelAndView mv = new ModelAndView(getSuccessView());
         User user = (User)command;
         mv.addObject("registrationMessage", "Witaj" + user.getName());
+        universalService.addUser(user);
         return mv;
     }
     

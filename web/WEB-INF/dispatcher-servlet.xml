@@ -36,6 +36,6 @@
           p:viewName="index" />
     
     <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping" />
-    <bean class="WebsiteControllers.RegisterController"/>
+    <bean class="WebsiteControllers.RegisterController"  p:universalService-ref="universalService"/>
 
 </beans>
