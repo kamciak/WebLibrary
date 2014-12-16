@@ -44,7 +44,91 @@ public class User {
         
         return builder.toString();
     }
+
+    public String getPassword() {
+        return _password;
+    }
+
+    public void setPassword(String _password) {
+        this._password = _password;
+    }
+
+    public String getName() {
+        return _name;
+    }
+
+    public void setName(String _name) {
+        this._name = _name;
+    }
+
+    public String getSurename() {
+        return _surename;
+    }
+
+    public void setSurename(String _surename) {
+        this._surename = _surename;
+    }
+
+    public String getPesel() {
+        return _pesel;
+    }
+
+    public void setPesel(String _pesel) {
+        this._pesel = _pesel;
+    }
+
+    public String getPhone_number() {
+        return _phone_number;
+    }
+
+    public void setPhone_number(String _phone_number) {
+        this._phone_number = _phone_number;
+    }
+
+    public String getCountry() {
+        return _country;
+    }
+
+    public void setCountry(String _country) {
+        this._country = _country;
+    }
+
+    public String getCity() {
+        return _city;
+    }
+
+    public void setCity(String _city) {
+        this._city = _city;
+    }
+
+    public String getPost_code() {
+        return _post_code;
+    }
+
+    public void setPost_code(String _post_code) {
+        this._post_code = _post_code;
+    }
+
+    public String getStreet() {
+        return _street;
+    }
+
+    public void setStreet(String _street) {
+        this._street = _street;
+    }
     
+    
+    public String getAddress(){
+        StringBuilder builder = new StringBuilder();
+        
+        builder.append("Kraj: "+ _country + "\n");
+        builder.append("Miasto: "+_post_code+" "+ _city + "\n");
+        builder.append("Ulica: "+ _street + "\n");
+        
+        return builder.toString();
+    }
+    
+    /*
     public void setPassword(String password){
         _password = password;
     }
@@ -130,7 +214,7 @@ public class User {
     public String getPhoneNumber(){
         return _phone_number;
     }
-    
+    */
     
     
     private String _password;
