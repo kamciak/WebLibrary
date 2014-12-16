@@ -1,10 +1,4 @@
 package UserPackage;
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 /**
  *
  * @author Kamciak
@@ -127,95 +121,7 @@ public class User {
         
         return builder.toString();
     }
-    
-    /*
-    public void setPassword(String password){
-        _password = password;
-    }
-    
-    public void setName(String name){
-        _name = name;
-    }
-    
-    public void setSurename(String surename){
-        _surename = surename;
-    }
-    
-    public void setPesel(String pesel) throws InvalidPeselException{
-        
-            if (checkPesel(pesel))
-                _pesel = pesel;
-            else
-                throw new InvalidPeselException();
-    }
-    
-    public void setCountry(String country){
-        _country = country;
-    }
-    
-    public void setCity(String city){
-        _city = city;
-    }
-    
-    public void setPostCode(String post_code){
-        _post_code = post_code;
-    }
-    
-    public void setStreet(String street){
-        _street = street;
-    }
-    
-    public void setPhoneNumber(String phone_number){
-        _phone_number = phone_number;
-    }
-    
-    public String getPassword(){
-        return _password;
-    }
-    
-    public String getName(){
-        return _name;
-    }
-    
-    public String getSurename(){
-        return _surename;
-    }
-    
-    public String getPesel(){
-        return _pesel;
-    }
-    
-    public String getCountry(){
-        return _country;
-    }
-    
-    public String getCity(){
-        return _city;
-    }
-    
-    public String getPostCode(){
-        return _post_code;
-    }
-    
-    public String getStreet(){
-        return _street;
-    }
-    
-    public String getAddress(){
-        StringBuilder builder = new StringBuilder();
-        
-        builder.append("Kraj: "+ _country + "\n");
-        builder.append("Miasto: "+_post_code+" "+ _city + "\n");
-        builder.append("Ulica: "+ _street + "\n");
-        
-        return builder.toString();
-    }
-    
-    public String getPhoneNumber(){
-        return _phone_number;
-    }
-    */
-    
+ 
     
     private String _password;
     private String _name;
@@ -243,13 +149,5 @@ public class User {
         control_sum %= 10;
 
     return (control_sum == control_number);
-    }
-    
-    
-    
-  
- 
-
-    
-    
+    }    
 }
