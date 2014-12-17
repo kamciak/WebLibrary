@@ -7,6 +7,8 @@
 package service;
 
 import DAO.IUserDAO;
+import UserPackage.LoginData;
+import UserPackage.LoginWrapper;
 import UserPackage.User;
 
 /**
@@ -19,6 +21,7 @@ public class UniversalService {
     public IUserDAO getUserDAO() {
         return userDAO;
     }
+    
 
     public void setUserDAO(IUserDAO userDAO) {
         this.userDAO = userDAO;
@@ -36,6 +39,23 @@ public class UniversalService {
         }
         return null;
     }
+    
+    
+    public User getUser(String pesel){
+        return userDAO.getUser(pesel);
+    }
+    
+    
+    public LoginWrapper login(LoginData login_data){
+        
+        User user = getUser(login_data.getPesel());
+        LoginWrapper lw = new LoginWrapper(user, login_data);
+        lw.check();
+        
+        return lw;
+    }
+    
+    
     
     /*
     public void setUserDAO(IUserDAO userDAO) {
