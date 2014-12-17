@@ -67,8 +67,11 @@ public class User {
         return _pesel;
     }
 
-    public void setPesel(String _pesel) {
-        this._pesel = _pesel;
+    public void setPesel(String _pesel) throws InvalidPeselException {
+        
+        if(checkPesel(_pesel))
+            this._pesel = _pesel;
+        else throw new InvalidPeselException();
     }
 
     public String getPhone_number() {
