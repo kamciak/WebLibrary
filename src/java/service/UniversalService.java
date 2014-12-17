@@ -13,8 +13,9 @@ import UserPackage.User;
  *
  * @author Tomek
  */
-public class UniversalService {
 
+public class UniversalService {
+    IUserDAO userDAO;
     public IUserDAO getUserDAO() {
         return userDAO;
     }
@@ -22,7 +23,7 @@ public class UniversalService {
     public void setUserDAO(IUserDAO userDAO) {
         this.userDAO = userDAO;
     }
-    IUserDAO userDAO;
+    
     
     public void addUser(User user) {
         userDAO.addUser(user);

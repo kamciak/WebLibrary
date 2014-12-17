@@ -22,6 +22,14 @@ public class RegisterController extends SimpleFormController {
     
     private UniversalService universalService;
 
+    public UniversalService getUniversalService() {
+        return universalService;
+    }
+
+    public void setUniversalService(UniversalService universalService) {
+        this.universalService = universalService;
+    }
+
     
     public RegisterController() {
         //Initialize controller properties here or 
