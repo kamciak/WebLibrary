@@ -200,7 +200,6 @@ pip-log.txt
 # Mac crap
 .DS_Store
 build/web/redirect.jsp
-*.jsp
 build/web/WEB-INF/dispatcher-servlet.xml
 build/*
 build
