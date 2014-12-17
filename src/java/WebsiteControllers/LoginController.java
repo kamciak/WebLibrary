@@ -7,9 +7,11 @@ package WebsiteControllers;
 
 import UserPackage.LoginData;
 import UserPackage.LoginWrapper;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.validation.BindException;
+import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.SimpleFormController;
 import service.UniversalService;
@@ -47,9 +49,15 @@ public class LoginController extends SimpleFormController{
         mv.addObject("loginMessage", logged_user.getMsg());
         if(logged_user.isIs_logged()){
             mv.addObject("loggedUser", logged_user.getUser().getName());
+            String pesel = logged_user.getUser().getPesel();
+            Cookie cookie = new Cookie("user_pesel", pesel);
+            response.addCookie(cookie);
        
             
         }
+        
+        
+        
         return mv;
     }
 }

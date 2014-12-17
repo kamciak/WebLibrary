@@ -10,6 +10,7 @@ import DAO.IUserDAO;
 import UserPackage.LoginData;
 import UserPackage.LoginWrapper;
 import UserPackage.User;
+import org.springframework.web.bind.annotation.CookieValue;
 
 /**
  *
@@ -47,7 +48,6 @@ public class UniversalService {
     
     
     public LoginWrapper login(LoginData login_data){
-        
         User user = getUser(login_data.getPesel());
         LoginWrapper lw = new LoginWrapper(user, login_data);
         lw.check();

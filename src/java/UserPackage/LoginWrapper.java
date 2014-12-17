@@ -5,6 +5,8 @@
  */
 package UserPackage;
 
+import javax.servlet.http.Cookie;
+
 /**
  *
  * @author Kamciak
@@ -29,6 +31,7 @@ public class LoginWrapper {
             if(_user.getPassword().equals(_login_data.getPassword())){
                 _msg = "Zalogowano poprawnie!";
                 _is_logged = true;
+                
             }else{
                 _msg = "Niepoprawne hasło!";
                 _is_logged = false;
