@@ -29,8 +29,8 @@ public class UserDAO  implements IUserDAO {
     
     @Override
     public void addUser(User user) {
-        String query = "INSERT INTO WL_USER (USRLOGIN, USRPASSWORD, USRNAME, USRSURNAME, USRCOUNTRY, USRCITY, USRSTREET, USRPOSTCODE, USRPHONE) "
-                + "     VALUES (?,?,?,?,?,?,?,?,?)";
+        String query = "INSERT INTO WL_USER (USRLOGIN, USRPASSWORD, USRNAME, USRSURNAME, USRCOUNTRY, USRCITY, USRSTREET, USRPOSTCODE, USRPHONE, USRISADMIN) "
+                + "     VALUES (?,?,?,?,?,?,?,?,?,?)";
         jdbcTemplate.update(query, new Object[] {
         user.getPesel(),
         user.getPassword(),
@@ -41,6 +41,7 @@ public class UserDAO  implements IUserDAO {
         user.getStreet(),
         user.getPost_code(),
         user.getPhone_number(),
+        user.getAdmin(),
         });
     }
     
@@ -64,7 +65,8 @@ public class UserDAO  implements IUserDAO {
                         rs.getString("USRCITY"),
                         rs.getString("USRPOSTCODE"),
                         rs.getString("USRSTREET"),
-                        rs.getString("USRPHONE")
+                        rs.getString("USRPHONE"),
+                        rs.getBoolean("USRISADMIN")
                 );  } catch (InvalidDataException ex) {
                 Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
             }
