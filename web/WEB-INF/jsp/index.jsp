@@ -13,10 +13,7 @@
 <body>
 	<div id="content">
             <div id="menu_top">
-                    <a href="index.html"><img border="0" src="${pageContext.request.contextPath}/img/strona_glowna_top.jpg"></a>
-                    <a href="aktualnosci.html"><img border="0" src="${pageContext.request.contextPath}/img/aktualnosci_top.jpg"></a>
-                    <a href="galeria.html"><img border="0" src="${pageContext.request.contextPath}/img/galeria_top.jpg"></a>
-                    <a href="imprezy.html"><img border="0" src="${pageContext.request.contextPath}/img/imprezy_top.jpg"></a>
+                    <a href="index.htm"><img border="0" src="${pageContext.request.contextPath}/img/strona_glowna_top.jpg"></a>
                     <a href="contact.htm"><img border="0" src="${pageContext.request.contextPath}/img/kontakt_top.jpg"></a>
                     <br />
             </div>

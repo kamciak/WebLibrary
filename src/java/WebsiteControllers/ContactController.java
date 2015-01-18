@@ -5,6 +5,7 @@
  */
 package WebsiteControllers;
 
+import UserPackage.ContactData;
 import UserPackage.User;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -31,11 +32,18 @@ public class ContactController extends SimpleFormController {
     }
 
     
-    public ContactController() {
+    public ContactController(){
+        setCommandClass(ContactData.class);
+        setCommandName("contactData");
+
         setFormView("contact");
     }
 
     
-
+ @Override
+    protected ModelAndView onSubmit(HttpServletRequest request, HttpServletResponse response, Object command, BindException errors) throws Exception{
+        ModelAndView mv = new ModelAndView(getSuccessView());
+        return mv;
+    }
   
 }
