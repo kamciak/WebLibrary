@@ -38,7 +38,7 @@ public class UserTest {
     @Test
     public void createUser(){
         try{
-            User user = new User("Jan","Kowalski","91051403157","password","Polska","Kraków","30-059","Reymonta 17","795251451");
+            User user = new User("Jan","Kowalski","91051403157","password","Polska","Kraków","30-059","Reymonta 17","795251451", false);
             Assert.assertNotNull(user);
         }
         catch(InvalidDataException e){

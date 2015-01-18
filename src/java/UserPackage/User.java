@@ -7,7 +7,7 @@ public class User {
     public User(){}
     
     
-    public User(String name, String surename, String pesel, String password, String country, String city , String post_code, String street, String phone_number) throws InvalidDataException{
+    public User(String name, String surename, String pesel, String password, String country, String city , String post_code, String street, String phone_number, Boolean admin) throws InvalidDataException{
         try{
             _name = name;
             _surename = surename;
@@ -21,6 +21,7 @@ public class User {
             _post_code = post_code;
             _street = street;
             _phone_number = phone_number;
+            _admin = admin;
         } catch(InvalidDataException e){
             System.err.println(e.getMessage());
         }
@@ -135,6 +136,17 @@ public class User {
     private String _city;
     private String _post_code;
     private String _street;
+    private Boolean _admin;
+
+    public Boolean getAdmin() {
+        return _admin;
+    }
+
+    public void setAdmin(Boolean _admin) {
+        this._admin = _admin;
+    }
+
+
 
     private boolean checkPesel(String pesel){
         if (pesel.length() != 11) return false;
