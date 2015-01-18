@@ -18,7 +18,7 @@ import service.UniversalService;
  *
  * @author Kamciak
  */
-public class RegisterController extends SimpleFormController {
+public class ContactController extends SimpleFormController {
     
     private UniversalService universalService;
 
@@ -31,21 +31,11 @@ public class RegisterController extends SimpleFormController {
     }
 
     
-    public RegisterController() {
-        setCommandClass(User.class);
-        setCommandName("user");
-        setSuccessView("userRegistrationSuccessView");
-        setFormView("userRegistrationView");
+    public ContactController() {
+        setFormView("contact");
     }
 
     
-    @Override
-    protected ModelAndView onSubmit(HttpServletRequest request, HttpServletResponse response, Object command, BindException errors) throws Exception{
-        ModelAndView mv = new ModelAndView(getSuccessView());
-        User user = (User)command;
-        mv.addObject("registrationMessage", "Witaj" + user.getName());
-        universalService.addUser(user);
-        return mv;
-    }
+
   
 }
