@@ -33,32 +33,8 @@
         </div>
         <div id="info">
                 <!-- TUTAJ ZMIENIAMY ZAWARTOSC -->
-                <div class="legend">
-                    <p>PESEL:</p>
-                    <p>Hasło:</p>
-                </div>
-                <div class="fields">
-                    
-                    <spring:nestedPath path="login_data">
-                        <form action="index.htm" method="post">
-                            <spring:bind path="pesel">
-                                <input type="text" name="${status.expression}" value="${status.value}" />
-                            </spring:bind>
-                            <spring:bind path="password">
-                                <br />
-                                <input type="password" name="${status.expression}" value="${status.value}" />
-                            </spring:bind>
-                            <br />
-                            <input src="${pageContext.request.contextPath}/img/zaloguj.jpg" type="image" value="" />
-                            <br />
-                        </form>
-                    </spring:nestedPath>
-                </div>
-                <div class="clear"></div>
-                <br />
-                <p>Nie posiadasz jeszcze konta?</p>
-                
-                <a href="register.htm"><img id="registerButton" src="${pageContext.request.contextPath}/img/zarejestruj.jpg" /></a>
+                <h1> Witaj! Zalogowano poprawno!</h1>
+                Twoj numer PESEL: ${sessionScope.userPesel}
         </div>
         <div id="footer">
             <img border="0" src="${pageContext.request.contextPath}/img/stopka.jpg">
