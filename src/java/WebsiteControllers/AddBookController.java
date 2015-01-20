@@ -40,6 +40,8 @@ public class AddBookController extends SimpleFormController{
         ModelAndView mv = new ModelAndView(getSuccessView());
         Book book = (Book)command;
         
+        book.setAvailable(Boolean.TRUE);
+        
         universalService.addBook(book);
         mv.addObject("addBookMessage", "Dodano ksiazke");
 
