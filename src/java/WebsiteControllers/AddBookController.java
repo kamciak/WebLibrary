@@ -30,7 +30,7 @@ public class AddBookController extends SimpleFormController{
     
     public AddBookController(){
         setCommandClass(Book.class);
-        setCommandName("book_data");
+        setCommandName("book");
         setSuccessView("addBookSuccessView");
         setFormView("addBookView");
     }
@@ -38,9 +38,9 @@ public class AddBookController extends SimpleFormController{
     @Override
     protected ModelAndView onSubmit(HttpServletRequest request, HttpServletResponse response, Object command, BindException errors) throws Exception{
         ModelAndView mv = new ModelAndView(getSuccessView());
-        Book book_data = (Book)command;
+        Book book = (Book)command;
         
-        universalService.addBook(book_data);
+        universalService.addBook(book);
         mv.addObject("addBookMessage", "Dodano ksiazke");
 
         return mv;

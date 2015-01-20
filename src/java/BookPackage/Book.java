@@ -21,7 +21,6 @@ public class Book {
         this._year = year;
         this._available = available;
     }
-    
 
     public Integer getId() {
         return _id;
@@ -59,10 +58,10 @@ public class Book {
         return _year;
     }
 
-    public void setYear(int _year) {
+    public void setYear(Integer _year) {
         this._year = _year;
     }
-    
+
     public Boolean getAvailable() {
         return _available;
     }
@@ -70,6 +69,9 @@ public class Book {
     public void setAvailable(Boolean _available) {
         this._available = _available;
     }
+    
+
+   
     
     private Integer _id;
     private String _title;

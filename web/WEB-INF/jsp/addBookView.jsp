@@ -4,7 +4,9 @@
     Author     : Kamciak
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,7 +15,7 @@
     </head>
     <body>
         <h1>Add book</h1>
-        <spring:nestedPath path="book_data">
+        <spring:nestedPath path="book">
         <form action="" method="post">
         <span>Tytuł:</span>
         <spring:bind path="title">
