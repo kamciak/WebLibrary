@@ -10,7 +10,6 @@
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
     <title>WebLibrary</title>
 </head>
-
 <body>
     <div id="content">
         <div id="menu_top">

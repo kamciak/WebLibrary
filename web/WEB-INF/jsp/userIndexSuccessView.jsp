@@ -17,9 +17,6 @@
     <c:if test="${sessionScope.userGrants == true}">
         <c:redirect url="/paneladmin.htm"/>
     </c:if>
-    <c:if test="${sessionScope.userGrants == 'true'}">
-        <c:redirect url="/paneladmin.htm"/>
-    </c:if>
     <div id="content">
         <div id="menu_top">
                 <a href="index.htm"><img border="0" src="${pageContext.request.contextPath}/img/strona_glowna_top.jpg"></a>
@@ -44,6 +41,9 @@
                 <h1> Witaj! Zalogowano poprawno!</h1>
                 Twoj numer PESEL: ${sessionScope.userPesel}
                 Twoja prawa ${sessionScope.userGrants}
+                
+                <br /><br />
+                <a href="logout.htm">Wyloguj</a>
         </div>
         <div id="footer">
             <img border="0" src="${pageContext.request.contextPath}/img/stopka.jpg">

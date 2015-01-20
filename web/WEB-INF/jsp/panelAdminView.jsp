@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,6 +13,9 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <c:if test="${sessionScope.userGrants != true}">
+            <c:redirect url="index.htm"/>
+        </c:if>
         <h1>Panel ADmin View</h1>
     </body>
 </html>
