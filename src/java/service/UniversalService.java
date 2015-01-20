@@ -6,10 +6,13 @@
 
 package service;
 
+import BookPackage.Book;
+import DAO.IBookDAO;
 import DAO.IUserDAO;
 import UserPackage.LoginData;
 import UserPackage.LoginWrapper;
 import UserPackage.User;
+import java.util.ArrayList;
 import org.springframework.web.bind.annotation.CookieValue;
 
 /**
@@ -19,6 +22,16 @@ import org.springframework.web.bind.annotation.CookieValue;
 
 public class UniversalService {
     IUserDAO userDAO;
+    IBookDAO bookDAO;
+
+    public IBookDAO getBookDAO() {
+        return bookDAO;
+    }
+
+    public void setBookDAO(IBookDAO bookDAO) {
+        this.bookDAO = bookDAO;
+    }
+    
     public IUserDAO getUserDAO() {
         return userDAO;
     }
@@ -29,6 +42,8 @@ public class UniversalService {
     }
     
     
+    
+    //USER
     public void addUser(User user) {
         userDAO.addUser(user);
     }
@@ -56,10 +71,13 @@ public class UniversalService {
     }
     
     
+    //BOOK
+    public void addBook(Book book) {
+        bookDAO.addBook(book);
+    }
     
-    /*
-    public void setUserDAO(IUserDAO userDAO) {
-        this.userDAO = userDAO;
-    }*/
+    public ArrayList<Book> getAllBooks(){
+        return bookDAO.getAllBooks();
+    }
 
 }
