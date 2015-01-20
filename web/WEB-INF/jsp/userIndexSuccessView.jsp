@@ -14,8 +14,11 @@
 
 <body>
     
-    <c:if test="${sessionScope.userFrants == true}">
-        <c:redirect url="/paneladmnin.htm"/>
+    <c:if test="${sessionScope.userGrants == true}">
+        <c:redirect url="/paneladmin.htm"/>
+    </c:if>
+    <c:if test="${sessionScope.userGrants == 'true'}">
+        <c:redirect url="/paneladmin.htm"/>
     </c:if>
     <div id="content">
         <div id="menu_top">
