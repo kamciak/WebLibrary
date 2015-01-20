@@ -49,6 +49,7 @@ public class IndexController extends SimpleFormController{
             mv.addObject("loggedUser", logged_user.getUser().getName());
             String pesel = logged_user.getUser().getPesel();
             request.getSession().setAttribute("userPesel", pesel);
+            request.getSession().setAttribute("userGrants", logged_user.getUser().getAdmin());
         }
 
         return mv;

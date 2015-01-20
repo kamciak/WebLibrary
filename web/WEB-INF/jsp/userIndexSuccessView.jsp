@@ -1,6 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
     "http://www.w3.org/TR/html4/loose.dtd">
 
@@ -12,6 +13,10 @@
 </head>
 
 <body>
+    
+    <c:if test="${sessionScope.userFrants == true}">
+        <c:redirect url="/paneladmnin.htm"/>
+    </c:if>
     <div id="content">
         <div id="menu_top">
                 <a href="index.htm"><img border="0" src="${pageContext.request.contextPath}/img/strona_glowna_top.jpg"></a>
@@ -35,6 +40,7 @@
                 <!-- TUTAJ ZMIENIAMY ZAWARTOSC -->
                 <h1> Witaj! Zalogowano poprawno!</h1>
                 Twoj numer PESEL: ${sessionScope.userPesel}
+                Twoja prawa ${sessionScope.userGrants}
         </div>
         <div id="footer">
             <img border="0" src="${pageContext.request.contextPath}/img/stopka.jpg">
