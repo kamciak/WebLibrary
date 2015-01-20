@@ -12,7 +12,6 @@
 </head>
 
 <body>
-    <h1> INDEX VIEW</h1>
 	<div id="content">
             <div id="menu_top">
                     <a href="index.htm"><img border="0" src="${pageContext.request.contextPath}/img/strona_glowna_top.jpg"></a>
@@ -28,30 +27,15 @@
                     
                 <c:choose>
                 <c:when test="${sessionScope.userPesel == null}">
-                <div id="login_labels">
-                        <p>PESEL:</p>
-                        <p>Hasło:</p>
-                    </div>
-                    <div id="login_form">
-                        <spring:nestedPath path="login_data">
-                        <form action="index.htm" method="post">
-                                <spring:bind path="pesel">
-                                    <input type="text" name="${status.expression}" value="${status.value}">
-                                </spring:bind>
-                            <spring:bind path="password">
-                                <input type="password" name="${status.expression}" value="${status.value}">
-                            </spring:bind>
-                            <br />
-                            <input src="${pageContext.request.contextPath}/img/zaloguj.jpg" type="image" value="">
-                            <br />
-                        </form>
-                    </spring:nestedPath>
-                    </div>
+                
                 </c:when>
 
                 <c:otherwise>
-                    <jsp:forward page="main.htm"></jsp:forward>
+                    
                     <p> Zalogowano jako: ${sessionScope.userPesel}</p><br /><br />
+                        <form action="main.htm" method="post">
+                            <input src="${pageContext.request.contextPath}/img/wyloguj.jpg" type="image" value="">
+                        </form>
                 </c:otherwise>
                 </c:choose>
 

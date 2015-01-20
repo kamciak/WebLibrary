@@ -35,11 +35,26 @@ and open the template in the editor.
     clear: both;
 }
 
+#left{
+    width: 265px;
+    margin: 0px;
+    float: left;
+    padding: 0px;
+}
+
 #menu_left{
     width: 265px;
     margin: 0px;
     float: left;
     padding: 0px;
+}
+
+#main_menu_left{
+    width: 265px;
+    margin: 0px;
+    float: left;
+    padding: 0px;
+    
 }
 
 #info{
@@ -50,6 +65,43 @@ and open the template in the editor.
     float: left;
 }
 
+
+#main_menu_left p{
+	color: #808080;
+	font-size: 12px;
+	font-family: Verdana;
+	margin-bottom: 0px;
+        padding: 0px;
+        
+}
+
+#login_labels{
+    width: 30%;
+    float: left;
+}
+
+#login_form{
+    width: 70%;
+    float: left;
+}
+
+#main_menu_left input[type=text], input[type=password]{
+	border-style: solid;
+	border-width: 1px;
+	border-color: #527bff;
+	margin-left: 10px;
+        margin-top: 8px;
+
+}
+
+#main_menu_left input[type=image]{
+    width: 81px;
+    height: 17px;
+    margin-top: 10px;
+    margin-left: 70px;
+    padding: 0px;
+}
+        
 #footer{
     width: 800px;
     float: left;
