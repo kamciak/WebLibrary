@@ -55,7 +55,7 @@ public class Book {
         this._isbn = _isbn;
     }
 
-    public int getYear() {
+    public Integer getYear() {
         return _year;
     }
 
