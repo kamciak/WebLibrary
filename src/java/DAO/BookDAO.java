@@ -17,6 +17,8 @@ import java.util.logging.Logger;
 import javax.sql.DataSource;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
+import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.jdbc.core.simple.ParameterizedRowMapper;
 
 /**
@@ -33,24 +35,42 @@ public class BookDAO implements IBookDAO {
     @Override
     public void addBook(Book book)
     {
-        String query = "INSERT INTO BOOK (TITLE, AUTHOR, ISBN, BOOKYEAR) "
-                + "     VALUES (?,?,?,?)";
+        String query = "INSERT INTO BOOK (TITLE, AUTHOR, ISBN, BOOKYEAR, AVAILABLE) "
+                + "     VALUES (?,?,?,?,?)";
         jdbcTemplate.update(query, new Object[] {
         book.getTitle(),
         book.getAuthor(),
         book.getIsbn(),
         book.getYear(),
-        
+        book.getAvailable(),
         });
     }
     
     @Override
     public ArrayList<Book> getAllBooks()
     {
-       ArrayList<Book> result = new ArrayList<>();  
        String query = "SELECT * FROM APP.BOOK";
        return (ArrayList<Book>) jdbcTemplate.query(query, new BookMapper(), new Object[]{} );
     }
+    
+    @Override
+    public ArrayList<Book> getAvailableBooks()
+    {
+       String query = "SELECT * FROM APP.BOOK WHERE AVAILABLE=1";
+       return (ArrayList<Book>) jdbcTemplate.query(query, new BookMapper(), new Object[]{} );
+    }
+    
+    @Override
+    public Book getBookById(Integer id)
+    {
+       String query = "SELECT * FROM APP.BOOK WHERE ID =:id";
+       SqlParameterSource namedParameters = new MapSqlParameterSource("id", id);
+       return (Book)jdbcTemplate.queryForObject(query, new BookMapper(), namedParameters);
+    }
+    
+    
+    
+    
      
     protected static final class BookMapper implements ParameterizedRowMapper
     {
@@ -64,6 +84,7 @@ public class BookDAO implements IBookDAO {
         book.setAuthor(rs.getString("AUTHOR"));
         book.setIsbn(rs.getString("ISBN"));
         book.setYear(rs.getInt("BOOKYEAR"));
+        book.setAvailable(rs.getBoolean("AVAILABLE"));
         
         return book;
       }

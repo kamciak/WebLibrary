@@ -79,5 +79,14 @@ public class UniversalService {
     public ArrayList<Book> getAllBooks(){
         return bookDAO.getAllBooks();
     }
+    
+    public ArrayList<Book> getAvailableBooks(){
+        return bookDAO.getAvailableBooks();
+    }
+    
+    public Book getBookById(Integer id)
+    {
+        return bookDAO.getBookById(id);
+    }
 
 }

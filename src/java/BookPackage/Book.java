@@ -12,13 +12,14 @@ package BookPackage;
  */
 public class Book {
     public Book(){}
-    public Book(Integer id, String title, String author, String isbn, int year)
+    public Book(Integer id, String title, String author, String isbn, int year, Boolean available)
     {
         this._id = id;
         this._title = title;
         this._author = author;
         this._isbn = isbn;
         this._year = year;
+        this._available = available;
     }
     
 
@@ -62,9 +63,20 @@ public class Book {
         this._year = _year;
     }
     
+    public Boolean getAvailable() {
+        return _available;
+    }
+
+    public void setAvailable(Boolean _available) {
+        this._available = _available;
+    }
+    
     private Integer _id;
     private String _title;
     private String _author;
     private String _isbn;
     private Integer _year;
+    private Boolean _available;
+
+    
 }
