@@ -7,7 +7,6 @@ package WebsiteControllers;
 
 import UserPackage.LoginData;
 import UserPackage.LoginWrapper;
-import javax.enterprise.inject.Model;
 import javax.inject.Scope;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -15,7 +14,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import org.springframework.validation.BindException;
 import org.springframework.web.bind.annotation.CookieValue;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.SimpleFormController;
 import service.UniversalService;
@@ -44,17 +42,14 @@ public class LoginController extends SimpleFormController{
         setFormView("userLoginView");
     }
     
-
     @Override
     protected ModelAndView onSubmit(HttpServletRequest request, HttpServletResponse response, Object command, BindException errors) throws Exception{
-        
         ModelAndView mv = new ModelAndView(getSuccessView());
         LoginData login_data = (LoginData)command;
-        System.out.println("Login: " +login_data.getPesel() );
+        
         LoginWrapper logged_user =  universalService.login(login_data);
         
         mv.addObject("loginMessage", logged_user.getMsg());
-        
         if(logged_user.isIs_logged()){
             mv.addObject("loggedUser", logged_user.getUser().getName());
             String pesel = logged_user.getUser().getPesel();
