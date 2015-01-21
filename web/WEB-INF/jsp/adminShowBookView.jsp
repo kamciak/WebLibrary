@@ -61,8 +61,9 @@
                            <td><c:out value="${book.year}"/></td>
 
                            <td><a href=""><c:out value="Edytuj"/></a></td>
-                           <td><a href="admindeletebook.htm">
-                                   <c:set var="bookid" scope="session" value="${book.id}"/>
+                           <td><a href="admindeletebook.htm?bookid=${book.id}">
+                                   
+                                   
                                    <c:out value="Usuń"/></a></td>
                        </tr>
                     </c:forEach>

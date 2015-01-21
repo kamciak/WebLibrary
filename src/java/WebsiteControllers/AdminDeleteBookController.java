@@ -33,8 +33,9 @@ public class AdminDeleteBookController extends AbstractController{
     
     @Override
     protected ModelAndView handleRequestInternal(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        Integer bookId = (Integer)request.getSession().getAttribute("bookid");
-        
+        //Integer bookId = (Integer)request.getSession().getAttribute("bookid");
+        Integer bookId = Integer.parseInt(request.getParameter("bookid"));
+        //System.out.println();
         universalService.removeBookById(bookId);
         
         ModelAndView mv = new ModelAndView("adminDeleteBookView");
