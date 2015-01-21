@@ -48,15 +48,16 @@ public class BookDAO implements IBookDAO {
     
     @Override
     public void editBook(Book book){
-       /*String query = "update BOOK set TITLE = :title, AUTHOR=:author, ISBN=:isbn, BOOKYEAR=:bookyear"
-               + " WHERE ID=:id";
+       String query = "update BOOK set TITLE = ?, AUTHOR=?, ISBN=?, BOOKYEAR=?"
+               + " WHERE ID=?";
+       
         jdbcTemplate.update(query, new Object[] {
         book.getTitle(),
         book.getAuthor(),
         book.getIsbn(),
         book.getYear(),
-        book.getAvailable(),
-        });*/
+        book.getId(),
+        });
     }
     
     @Override
