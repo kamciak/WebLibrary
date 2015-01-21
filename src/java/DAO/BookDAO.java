@@ -7,6 +7,7 @@
 package DAO;
 
 import BookPackage.Book;
+import BookPackage.Reservation;
 import UserPackage.InvalidDataException;
 import UserPackage.User;
 import java.sql.ResultSet;
@@ -76,7 +77,7 @@ public class BookDAO implements IBookDAO {
     @Override
     public ArrayList<Book> getAvailableBooks()
     {
-       String query = "SELECT * FROM APP.BOOK WHERE AVAILABLE=1";
+       String query = "SELECT * FROM APP.BOOK WHERE AVAILABLE=true";
        return (ArrayList<Book>) jdbcTemplate.query(query, new BookMapper(), new Object[]{} );
     }
     
@@ -87,6 +88,81 @@ public class BookDAO implements IBookDAO {
        return (Book)jdbcTemplate.queryForObject(query, new BookMapper(), id);
        //SqlParameterSource namedParameters = new MapSqlParameterSource("id", id);
        //return (Book)jdbcTemplate.queryForObject(query, new BookMapper(), namedParameters);
+    }
+    
+    @Override
+    public void reserveBook(String userPesel, Integer bookId){
+        String query = "INSERT INTO RESERVATION(USRID, BOOKID) VALUES(?,?)";
+        
+        jdbcTemplate.update(query, new Object[] {
+        userPesel,
+        bookId,
+        });
+        
+        this.setBookAvailable(bookId, Boolean.FALSE);
+    }
+    
+    @Override
+    public void borrowBook(String userPesel, Integer bookId){
+        String query = "INSERT INTO BORROW(USRID, BOOKID, DELETED) VALUES(?,?, false)";
+        
+        jdbcTemplate.update(query, new Object[] {
+        userPesel,
+        bookId,
+        });
+        
+        this.removeReservationWithoutAvailability(userPesel, bookId);
+    }
+    
+    private void removeReservationWithoutAvailability(String userPesel, Integer bookId){
+        String query = "DELETE FROM RESERVATION WHERE USRID=? AND BOOKID=?";
+        
+        jdbcTemplate.update(query, new Object[] {
+        userPesel,
+        bookId,
+        });
+    }
+    
+    @Override
+    public void removeReservation(String userPesel, Integer bookId){
+        this.removeReservationWithoutAvailability(userPesel, bookId);
+        this.setBookAvailable(bookId, Boolean.TRUE);
+    }
+    
+    @Override
+    public void setBookAvailable(Integer bookId, Boolean available)
+    {
+        String query = "UPDATE BOOK set AVAILABLE=? WHERE ID = ?";
+        
+        jdbcTemplate.update(query, new Object[] {
+        available,
+        bookId,
+        });
+    }
+    
+    @Override
+    public void removeBorrowings(String userPesel, Integer bookId)
+    {
+        String query = "UPDATE BORROW set DELETED=true WHERE USRID = ? AND BOOKID = ?";
+        
+        jdbcTemplate.update(query, new Object[] {
+        userPesel,
+        bookId,
+        });
+        
+        this.setBookAvailable(bookId, Boolean.TRUE);
+    }
+
+    @Override
+    public ArrayList<Reservation> getAllReservations(){
+       String query = "SELECT * FROM APP.RESERVATION";
+       return (ArrayList<Reservation>) jdbcTemplate.query(query, new ReservationMapper(), new Object[]{} );
+    }
+    
+    @Override
+    public ArrayList<Reservation> getReservationsByUser(String userPesel){
+       String query = "SELECT * FROM APP.RESERVATION WHERE USRID = ?";
+       return (ArrayList<Reservation>) jdbcTemplate.query(query, new ReservationMapper(), new Object[]{userPesel} );
     }
     
     
@@ -108,6 +184,20 @@ public class BookDAO implements IBookDAO {
         book.setAvailable(rs.getBoolean("AVAILABLE"));
         
         return book;
+      }
+    }
+    
+    protected static final class ReservationMapper implements ParameterizedRowMapper
+    {
+      @Override
+      public Reservation mapRow(ResultSet rs, int rowNum)
+      throws SQLException 
+      {
+        Reservation resv = new Reservation();
+        resv.setUserPesel(rs.getString("USRID") );
+        resv.setBookId(rs.getInt("BOOKID") );
+        
+        return resv;
       }
     }
 }

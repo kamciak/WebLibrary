@@ -19,4 +19,5 @@ public interface IUserDAO {
     void removeUserByPesel(String userPesel);
     void editUser(User user);
     ArrayList<User> getAllUsers();
+    
 }

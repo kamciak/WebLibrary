@@ -7,6 +7,7 @@
 package DAO;
 
 import BookPackage.Book;
+import BookPackage.Reservation;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,4 +22,13 @@ public interface IBookDAO {
     ArrayList<Book> getAllBooks();
     ArrayList<Book> getAvailableBooks();
     Book getBookById(Integer id);
+    
+    void reserveBook(String userPesel, Integer bookId);
+    void removeReservation(String userPesel, Integer bookId);
+    void borrowBook(String userPesel, Integer bookId);
+    void removeBorrowings(String userPesel, Integer bookId);
+    void setBookAvailable(Integer bookId, Boolean available);
+    
+    ArrayList<Reservation> getAllReservations();
+    ArrayList<Reservation> getReservationsByUser(String userPesel);
 }
