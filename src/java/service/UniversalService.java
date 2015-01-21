@@ -52,6 +52,10 @@ public class UniversalService {
         userDAO.editUser(user);
     }
     
+    public void removeUserByPesel(String userPesel){
+        userDAO.removeUserByPesel(userPesel);
+    }
+    
     public User getUser(User user) {
         if (user != null) {
             //User user = getUser(user);

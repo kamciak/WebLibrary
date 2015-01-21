@@ -86,6 +86,14 @@ public class UserDAO implements IUserDAO {
         return (ArrayList<User>) jdbcTemplate.query(query, new UserMapper(), new Object[]{});
     }
 
+    
+    @Override
+    public void removeUserByPesel(String userPesel){
+        String DELETE = " DELETE FROM WL_USER WHERE USRLOGIN=?";
+        jdbcTemplate.update(DELETE, userPesel);
+    }
+    
+    
     protected static final class UserMapper implements ParameterizedRowMapper {
 
         @Override

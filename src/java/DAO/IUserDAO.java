@@ -16,6 +16,7 @@ import java.util.ArrayList;
 public interface IUserDAO {
     void addUser(User user);
     User getUser(String userLogin);
+    void removeUserByPesel(String userPesel);
     void editUser(User user);
     ArrayList<User> getAllUsers();
 }
