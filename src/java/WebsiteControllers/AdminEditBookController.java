@@ -65,7 +65,9 @@ public class AdminEditBookController extends SimpleFormController {
     @Override
     protected ModelAndView onSubmit(HttpServletRequest request, HttpServletResponse response, Object command, BindException errors) throws Exception{
         ModelAndView mv = new ModelAndView(getSuccessView());
+        Integer bookId = Integer.parseInt(request.getParameter("bookid"));
         Book book = (Book)command;
+        book.setId(bookId);
         System.out.println("EDYTUJE");
         System.out.println(""+book.getTitle());
         universalService.editBook(book);
