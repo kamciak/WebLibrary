@@ -16,5 +16,5 @@ import java.util.ArrayList;
 public interface IUserDAO {
     void addUser(User user);
     User getUser(String userLogin);
-    //ArrayList<User> getAllUsers();
+    ArrayList<User> getAllUsers();
 }
