@@ -49,7 +49,6 @@
                 <p>Kod pocztowy:</p>
                 <p>Ulica:</p>
                 <p>Numer telefonu:</p>
-                <p>Prawa admina:</p>
             </div>
             <div class="fields">
                 <spring:nestedPath path="user">
@@ -90,11 +89,17 @@
                             <input type="text" name="${status.expression}" value="${current_user.phone_number}">
                         </spring:bind>
                         <br />
+                        <br />
                         <spring:bind path="admin">
-                            <input type="text" name="${status.expression}" value="${current_user.admin}">
+                            <c:if test="${current_user.admin == true}">
+                                <p>Prawa admina:<input type="checkbox" name="admingrants" value="true" checked></p><br>
+                            </c:if>
+                            <c:if test="${current_user.admin == false}">
+                                <p>Prawa admina:<input type="checkbox" name="admingrants" value="false"></p><br>
+                            </c:if>    
                         </spring:bind>
-                        <br />
-                        <br />
+  
+                        
                          <input src="${pageContext.request.contextPath}/img/edytuj.jpg" type="image" value="" />
                     </form>
                 </spring:nestedPath>

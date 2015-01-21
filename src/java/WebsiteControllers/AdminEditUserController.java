@@ -54,6 +54,17 @@ public class AdminEditUserController extends SimpleFormController {
         ModelAndView mv = new ModelAndView(getSuccessView());
         String userPesel = request.getParameter("userpesel");
         User user = (User)command;
+        try{
+            String admingrants = request.getParameter("admingrants");
+            System.out.println("Granty: " + admingrants);
+            if(admingrants!=null)
+                user.setAdmin(Boolean.TRUE);
+
+        }
+        catch(NullPointerException ex){
+            user.setAdmin(Boolean.FALSE);
+        }
+        
         user.setPesel(userPesel);
         universalService.editUser(user);
         
