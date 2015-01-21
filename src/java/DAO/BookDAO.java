@@ -47,6 +47,12 @@ public class BookDAO implements IBookDAO {
     }
     
     @Override
+    public void removeBookById(Integer bookId){
+        String DELETE = " DELETE FROM BOOK WHERE ID=?";
+        jdbcTemplate.update(DELETE, bookId);
+    }
+    
+    @Override
     public ArrayList<Book> getAllBooks()
     {
        String query = "SELECT * FROM APP.BOOK";

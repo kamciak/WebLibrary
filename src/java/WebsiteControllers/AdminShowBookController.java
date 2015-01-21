@@ -5,6 +5,8 @@
  */
 package WebsiteControllers;
 
+import BookPackage.Book;
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.web.servlet.ModelAndView;
@@ -13,9 +15,9 @@ import service.UniversalService;
 
 /**
  *
- * @author Kamciak
+ * @author kamil
  */
-public class LogoutController extends AbstractController{
+public class AdminShowBookController extends AbstractController{
     private UniversalService universalService;
 
     public UniversalService getUniversalService() {
@@ -27,9 +29,16 @@ public class LogoutController extends AbstractController{
     }
     @Override
     protected ModelAndView handleRequestInternal(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        request.getSession().setAttribute("userPesel", null);
-        System.out.println("SESSION: " + request.getSession().getAttribute("userPesel"));
-        return new ModelAndView("userLogoutView");
+        ModelAndView mv = new ModelAndView("adminShowBookView");
+        List<Book> listOfBooks = universalService.getAllBooks();
+        for(Book book : listOfBooks){
+           System.out.println(book.getTitle()) ;
+        }
+    
+        mv.addObject("listOfBooks",listOfBooks);
+        
+        return mv;
+        
     }
     
 }

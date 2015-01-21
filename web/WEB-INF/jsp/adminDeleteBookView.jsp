@@ -1,6 +1,6 @@
 <%-- 
-    Document   : addBookView
-    Created on : 2015-01-20, 21:50:13
+    Document   : adminDeleteBookView
+    Created on : 2015-01-21, 18:19:39
     Author     : Kamciak
 --%>
 
@@ -38,39 +38,10 @@
         </div>
         <div id="info">
                 <!-- TUTAJ ZMIENIAMY ZAWARTOSC -->
-                <h3>Dodaj książkę</h3>
-                <div class="legend">
-                    <p>Tytuł:</p>
-                    <p>Autor:</p>
-                    <p>ISBN:</p>
-                    <p>Rok:</p>
-                </div>
-                <div class="fields">
-                    
-                    <spring:nestedPath path="book">
-                    <form action="" method="post">
-                    <spring:bind path="title">
-                        <input type="text" name="${status.expression}" value="${status.value}">
-                    </spring:bind>
-                    <br />
-                    <spring:bind path="author">
-                        <input type="text" name="${status.expression}" value="${status.value}">
-                    </spring:bind>
-                    <br />
-                    <spring:bind path="isbn">
-                        <input type="text" name="${status.expression}" value="${status.value}">
-                    </spring:bind>
-                    <br />
-                    <spring:bind path="year">
-                        <input type="text" name="${status.expression}" value="${status.value}">
-                    </spring:bind>
-                    <br />
-
-                    <br />
-                    <input type="submit" value="Dodaj">
-                    </form>
-                    </spring:nestedPath>
-                </div>
+                <h3>Usunięto poprawnie książkę</h3>
+                <br />
+                <a href="paneladmin.htm">Powrót do panelu admina</a><br />
+                <br />
         </div>
         <div id="footer">
             <img border="0" src="${pageContext.request.contextPath}/img/stopka.jpg">

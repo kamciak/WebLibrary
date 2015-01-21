@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <c:if test="${sessionScope.userGrants != true}">
+    <c:if test="${sessionScope.userPesel == null || sessionScope.userGrants != true}">
             <c:redirect url="index.htm"/>
    </c:if>
     <div id="content">
@@ -46,7 +46,7 @@
                 <center>
                     <a href="addbook.htm"><img src="${pageContext.request.contextPath}/img/dodaj_ksiazke.jpg" /></a><br />
                     <br />
-                    <img src="${pageContext.request.contextPath}/img/wyswietl_ksiazki.jpg" /><br />
+                    <a href="adminshowbook.htm"><img src="${pageContext.request.contextPath}/img/wyswietl_ksiazki.jpg" /></a><br />
                     <br />
                     <img src="${pageContext.request.contextPath}/img/wyswietl_uzytkownikow.jpg" /><br />
                     <br />
