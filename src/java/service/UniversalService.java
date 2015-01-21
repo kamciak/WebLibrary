@@ -48,6 +48,10 @@ public class UniversalService {
         userDAO.addUser(user);
     }
     
+    public void editUser(User user){
+        userDAO.editUser(user);
+    }
+    
     public User getUser(User user) {
         if (user != null) {
             //User user = getUser(user);
@@ -60,6 +64,7 @@ public class UniversalService {
     public User getUser(String pesel){
         return userDAO.getUser(pesel);
     }
+    
     
     public ArrayList<User> getAllUsers(){
         return userDAO.getAllUsers();

@@ -1,6 +1,6 @@
 <%-- 
-    Document   : panelAdminView
-    Created on : 2015-01-20, 20:41:42
+    Document   : adminShowUserView
+    Created on : 2015-01-21, 20:16:14
     Author     : Kamciak
 --%>
 
@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <c:if test="${sessionScope.userPesel == null || sessionScope.userGrants != true}">
+    <c:if test="${sessionScope.userGrants==null || sessionScope.userGrants != true}">
             <c:redirect url="index.htm"/>
    </c:if>
     <div id="content">
@@ -42,21 +42,28 @@
         </div>
         <div id="info">
                 <!-- TUTAJ ZMIENIAMY ZAWARTOSC -->
-                <h3> Admin panel</h3>
-                <center>
-                    <a href="addbook.htm"><img src="${pageContext.request.contextPath}/img/dodaj_ksiazke.jpg" /></a><br />
-                    <br />
-                    <a href="adminshowbook.htm"><img src="${pageContext.request.contextPath}/img/wyswietl_ksiazki.jpg" /></a><br />
-                    <br />
-                    <a href="adminshowusers.htm"><img src="${pageContext.request.contextPath}/img/wyswietl_uzytkownikow.jpg" /></a><br />
-                    <br />
+                <h1>Edit users</h1>
+                <div class="tableContainer" >
+                <table >
+                    <tr>
+                        <td>PESEL</td>
+                        <td >Imię</td>
+                        <td>Nazwisko</td>
+                        <td></td>
+                        <td></td>
+                        <c:forEach items="${listOfUsers}" var="user">
+                        <tr>
+                           <td><c:out value="${user.pesel}"/></td>
+                           <td><c:out value="${user.name}"/></td>
+                           <td><c:out value="${user.surename}"/></td>
+                           <td><a href="adminedituser.htm?userpesel=${user.pesel}"><c:out value="Podgląd"/></a></td>
+                           <td><a href="admindeleteuser.htm?userpesel=${user.pesel}"><c:out value="Usuń"/></a></td>
+                       </tr>
+                    </c:forEach>
+                    </tr>
                     
-                    
-                </center>
-                
-                
-                
-                
+                </table>
+            </div>
                 <a href="logout.htm">Wyloguj</a>
         </div>
         <div id="footer">

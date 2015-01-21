@@ -18,7 +18,7 @@ import service.UniversalService;
  *
  * @author Kamciak
  */
-public class AdminEditBookController extends SimpleFormController {
+public class AdminEditUserController extends SimpleFormController {
     
     private UniversalService universalService;
 
@@ -31,33 +31,32 @@ public class AdminEditBookController extends SimpleFormController {
     }
     
     
-    public AdminEditBookController(){
-        setCommandClass(Book.class);
-        setCommandName("book");
-        setSuccessView("adminEditBookSuccessView");
-        setFormView("adminEditBookView");
+    public AdminEditUserController(){
+        setCommandClass(User.class);
+        setCommandName("user");
+        setSuccessView("adminEditUserSuccessView");
+        setFormView("adminEditUserView");
     }
 
     @Override
     protected ModelAndView showForm(HttpServletRequest request, HttpServletResponse response, BindException errors) throws Exception {
-        ModelAndView mv=new ModelAndView(getFormView(), "book", errors.getTarget()); 
+        ModelAndView mv=new ModelAndView(getFormView(), "user", errors.getTarget()); 
 
-        Integer bookId = Integer.parseInt(request.getParameter("bookid"));
-        Book book = universalService.getBookById(bookId);
+        String userPesel = request.getParameter("userpesel");
+        User user = universalService.getUser(userPesel);
         
-        mv.addObject("current_book", book);
+        mv.addObject("current_user", user);
         return mv;
     }
     
     @Override
     protected ModelAndView onSubmit(HttpServletRequest request, HttpServletResponse response, Object command, BindException errors) throws Exception{
         ModelAndView mv = new ModelAndView(getSuccessView());
-        Integer bookId = Integer.parseInt(request.getParameter("bookid"));
-        Book book = (Book)command;
-        book.setId(bookId);
-        universalService.editBook(book);
+        String userPesel = request.getParameter("userpesel");
+        User user = (User)command;
+        user.setPesel(userPesel);
+        universalService.editUser(user);
         
         return mv;
     }
-    
 }

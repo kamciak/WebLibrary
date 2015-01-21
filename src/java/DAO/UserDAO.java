@@ -48,6 +48,26 @@ public class UserDAO implements IUserDAO {
     }
 
     @Override
+    public void editUser(User user){
+        String query = "update WL_USER set USRLOGIN = ?, USRNAME=?, USRSURNAME=?, USRCOUNTRY=?, USRPASSWORD=?, USRCITY=?, USRPOSTCODE=?, USRSTREET=?, USRPHONE=?, USRISADMIN=?"
+               + " WHERE USRLOGIN=?";
+       
+        jdbcTemplate.update(query, new Object[] {
+            user.getPesel(),
+            user.getName(),
+            user.getSurename(),
+            user.getCountry(),
+            user.getPassword(),
+            user.getCity(),
+            user.getPost_code(),
+            user.getStreet(),
+            user.getPhone_number(),
+            user.getAdmin(),
+            user.getPesel()});
+
+    }
+    
+    @Override
     public User getUser(String userLogin) {
         String query = "SELECT * FROM APP.WL_USER WHERE USRLOGIN=?";
         User user = null;
