@@ -44,6 +44,7 @@ http://www.springframework.org/schema/mvc
     <bean class="WebsiteControllers.IndexController"  p:universalService-ref="universalService"/>
     <bean class="WebsiteControllers.ContactController"  p:universalService-ref="universalService"/>
     <bean class="WebsiteControllers.PanelAdminController"  p:universalService-ref="universalService"/>
+    <bean class="WebsiteControllers.PanelUserController"  p:universalService-ref="universalService"/>
     <bean class="WebsiteControllers.LogoutController"  p:universalService-ref="universalService"/>
     <bean class="WebsiteControllers.AddBookController"  p:universalService-ref="universalService"/>
     <bean class="WebsiteControllers.AdminShowBookController"  p:universalService-ref="universalService"/>
@@ -52,5 +53,6 @@ http://www.springframework.org/schema/mvc
     <bean class="WebsiteControllers.AdminEditUserController"  p:universalService-ref="universalService"/>
     <bean class="WebsiteControllers.AdminShowUsersController"  p:universalService-ref="universalService"/>
     <bean class="WebsiteControllers.AdminDeleteUserController"  p:universalService-ref="universalService"/>
+    
     <mvc:resources mapping="/img/**" location="/img/" />
 </beans>
