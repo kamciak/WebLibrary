@@ -1,11 +1,12 @@
 <%-- 
-    Document   : editBookView
-    Created on : 2015-01-21, 15:44:17
-    Author     : kamil
+    Document   : adminEditBookView
+    Created on : 2015-01-21, 19:13:26
+    Author     : Kamciak
 --%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
     "http://www.w3.org/TR/html4/loose.dtd">
 
@@ -17,9 +18,6 @@
 </head>
 
 <body>
-    <c:if test="${sessionScope.userGrants==null || sessionScope.userGrants != true}">
-            <c:redirect url="index.htm"/>
-   </c:if>
     <div id="content">
         <div id="menu_top">
                 <a href="index.htm"><img border="0" src="${pageContext.request.contextPath}/img/strona_glowna_top.jpg"></a>
@@ -40,35 +38,40 @@
             <br />
         </div>
         <div id="info">
-                <!-- TUTAJ ZMIENIAMY ZAWARTOSC -->
-                <h1>Edit book2</h1>
-                
-                
-                <div class="tableContainer" >
-                <table >
-                    <tr>
-                        <td>Tytuł</td>
-                        <td >Autor</td>
-                        <td >ISBN</td>
-                        <td >Rok</td>
-                        <td ></td>
-                        <td ></td>
-                        <c:forEach items="${listOfBooks}" var="book">
-                        <tr>
-                           <td><c:out value="${book.title}"/></td>
-                           <td><c:out value="${book.author}"/></td>
-                           <td><c:out value="${book.isbn}"/></td>
-                           <td><c:out value="${book.year}"/></td>
-
-                           <td><a href="admineditbook.htm?bookid=${book.id}"><c:out value="Edytuj"/></a></td>
-                           <td><a href="admindeletebook.htm?bookid=${book.id}"><c:out value="Usuń"/></a></td>
-                       </tr>
-                    </c:forEach>
-                    </tr>
-                    
-                </table>
+            <!-- TUTAJ ZMIENIAMY ZAWARTOSC -->
+            <div class="legend">
+                <p>Tytuł:</p>
+                <p>Autor:</p>
+                <p>ISBN:</p>
+                <p>Rok:</p>
             </div>
-                <a href="logout.htm">Wyloguj</a>
+            <div class="fields">
+                <spring:nestedPath path="book">
+                    <form action="" method="post">
+                        <spring:bind path="title">
+                            <input type="text" name="${status.expression}" value="${current_book.title}">
+                        </spring:bind>
+                        <br />
+                        <spring:bind path="author">
+                            <input type="text" name="${status.expression}" value="${current_book.author}">
+                        </spring:bind>
+                        <br />
+                        <spring:bind path="isbn">
+                            <input type="text" name="${status.expression}" value="${current_book.isbn}">
+                        </spring:bind>
+                        <br />
+                        <spring:bind path="year">
+                            <input type="text" name="${status.expression}" value="${current_book.year}">
+                        </spring:bind>
+                        <br />
+                        <br />
+                         <input src="${pageContext.request.contextPath}/img/edytuj.jpg" type="image" value="" />
+                    </form>
+                </spring:nestedPath>
+                    
+                </div>
+                
+                        
         </div>
         <div id="footer">
             <img border="0" src="${pageContext.request.contextPath}/img/stopka.jpg">

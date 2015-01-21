@@ -1,11 +1,12 @@
 <%-- 
-    Document   : editBookView
-    Created on : 2015-01-21, 15:44:17
-    Author     : kamil
+    Document   : adminEditBookSuccessView
+    Created on : 2015-01-21, 19:12:56
+    Author     : Kamciak
 --%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
     "http://www.w3.org/TR/html4/loose.dtd">
 
@@ -15,11 +16,7 @@
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
     <title>WebLibrary</title>
 </head>
-
 <body>
-    <c:if test="${sessionScope.userGrants==null || sessionScope.userGrants != true}">
-            <c:redirect url="index.htm"/>
-   </c:if>
     <div id="content">
         <div id="menu_top">
                 <a href="index.htm"><img border="0" src="${pageContext.request.contextPath}/img/strona_glowna_top.jpg"></a>
@@ -41,34 +38,10 @@
         </div>
         <div id="info">
                 <!-- TUTAJ ZMIENIAMY ZAWARTOSC -->
-                <h1>Edit book2</h1>
-                
-                
-                <div class="tableContainer" >
-                <table >
-                    <tr>
-                        <td>Tytuł</td>
-                        <td >Autor</td>
-                        <td >ISBN</td>
-                        <td >Rok</td>
-                        <td ></td>
-                        <td ></td>
-                        <c:forEach items="${listOfBooks}" var="book">
-                        <tr>
-                           <td><c:out value="${book.title}"/></td>
-                           <td><c:out value="${book.author}"/></td>
-                           <td><c:out value="${book.isbn}"/></td>
-                           <td><c:out value="${book.year}"/></td>
-
-                           <td><a href="admineditbook.htm?bookid=${book.id}"><c:out value="Edytuj"/></a></td>
-                           <td><a href="admindeletebook.htm?bookid=${book.id}"><c:out value="Usuń"/></a></td>
-                       </tr>
-                    </c:forEach>
-                    </tr>
-                    
-                </table>
-            </div>
-                <a href="logout.htm">Wyloguj</a>
+                <h3>Edycja powiodła się.</h3>
+                <br />
+                <a href="paneladmin.htm">Powrót do panelu admina</a><br />
+                <br />
         </div>
         <div id="footer">
             <img border="0" src="${pageContext.request.contextPath}/img/stopka.jpg">
