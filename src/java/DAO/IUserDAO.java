@@ -7,6 +7,7 @@
 package DAO;
 
 import UserPackage.User;
+import java.util.ArrayList;
 
 /**
  *
@@ -15,4 +16,5 @@ import UserPackage.User;
 public interface IUserDAO {
     void addUser(User user);
     User getUser(String userLogin);
+    //ArrayList<User> getAllUsers();
 }

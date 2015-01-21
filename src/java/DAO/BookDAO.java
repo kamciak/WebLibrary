@@ -83,9 +83,10 @@ public class BookDAO implements IBookDAO {
     @Override
     public Book getBookById(Integer id)
     {
-       String query = "SELECT * FROM APP.BOOK WHERE ID =:id";
-       SqlParameterSource namedParameters = new MapSqlParameterSource("id", id);
-       return (Book)jdbcTemplate.queryForObject(query, new BookMapper(), namedParameters);
+       String query = "SELECT * FROM APP.BOOK WHERE ID =?";
+       return (Book)jdbcTemplate.queryForObject(query, new BookMapper(), id);
+       //SqlParameterSource namedParameters = new MapSqlParameterSource("id", id);
+       //return (Book)jdbcTemplate.queryForObject(query, new BookMapper(), namedParameters);
     }
     
     
