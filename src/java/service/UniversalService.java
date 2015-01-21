@@ -76,6 +76,10 @@ public class UniversalService {
         bookDAO.addBook(book);
     }
     
+     public void editBook(Book book) {
+        bookDAO.editBook(book);
+    }
+    
     public void removeBookById(int bookId){
         bookDAO.removeBookById(bookId);
     }

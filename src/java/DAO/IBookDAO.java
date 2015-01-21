@@ -17,6 +17,7 @@ import java.util.List;
 public interface IBookDAO {
     void addBook(Book book);
     void removeBookById(Integer bookId);
+    void editBook(Book book);
     ArrayList<Book> getAllBooks();
     ArrayList<Book> getAvailableBooks();
     Book getBookById(Integer id);
