@@ -52,7 +52,7 @@
                     <br />
                     <a href="usershowhistory.htm"><img src="${pageContext.request.contextPath}/img/historia.jpg" /></a><br />
                     <br />
-                    <a href="useredit.htm"><img src="${pageContext.request.contextPath}/img/edytuj_dane.jpg" /></a><br />
+                    <a href="usereditdata.htm"><img src="${pageContext.request.contextPath}/img/edytuj_dane.jpg" /></a><br />
                     <br />
                     
                     

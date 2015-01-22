@@ -1,6 +1,6 @@
 <%-- 
-    Document   : adminEditUserView
-    Created on : 2015-01-21, 20:30:18
+    Document   : userEditDataView
+    Created on : 2015-01-22, 20:32:30
     Author     : Kamciak
 --%>
 
@@ -54,7 +54,7 @@
                 <spring:nestedPath path="user">
                     <form action="" method="post">
                         <spring:bind path="pesel">
-                            <input type="text" name="${status.expression}" value="${current_user.pesel}">
+                            <input type="text" name="${status.expression}" value="${current_user.pesel}"  disabled>
                         </spring:bind>
                         <br />
                         <spring:bind path="name">
@@ -92,10 +92,10 @@
                         <br />
                         <spring:bind path="admin">
                             <c:if test="${current_user.admin == true}">
-                                <p>Prawa admina:<input type="checkbox" name="admingrants" value="true" checked></p><br>
+                               <input type="hidden" name="admingrants" value="true" checked><br>
                             </c:if>
                             <c:if test="${current_user.admin == false}">
-                                <p>Prawa admina:<input type="checkbox" name="admingrants" value="false"></p><br>
+                                <input type="hidden" name="admingrants" value="false"><br>
                             </c:if>    
                         </spring:bind>
   
