@@ -10,7 +10,14 @@ package BookPackage;
  *
  * @author Tomek
  */
-public class Reservation extends OperationBase {
-    
-    
+public class Borrowings extends Reservation {
+    private Boolean _deleted;
+
+    public Boolean isDeleted() {
+        return _deleted;
+    }
+
+    public void setDeleted(Boolean _deleted) {
+        this._deleted = _deleted;
+    }
 }

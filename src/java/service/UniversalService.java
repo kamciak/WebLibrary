@@ -7,6 +7,7 @@
 package service;
 
 import BookPackage.Book;
+import BookPackage.Borrowings;
 import BookPackage.Reservation;
 import DAO.IBookDAO;
 import DAO.IUserDAO;
@@ -137,6 +138,22 @@ public class UniversalService {
     
     public ArrayList<Reservation> getReservationsByUser(String userPesel){
         return bookDAO.getReservationsByUser(userPesel);
+    }
+    
+    public ArrayList<Borrowings> getAllCurrentBorrowings(){
+        return bookDAO.getAllCurrentBorrowings();
+    }
+    
+    public ArrayList<Borrowings> getCurrentBorrowingsByUser(String userPesel){
+        return bookDAO.getCurrentBorrowingsByUser(userPesel);
+    }
+    
+    public ArrayList<Borrowings> getAllBorrowings(){
+        return bookDAO.getAllCurrentBorrowings();
+    }
+    
+    public ArrayList<Borrowings> getBorrowingsByUser(String userPesel){
+        return bookDAO.getCurrentBorrowingsByUser(userPesel);
     }
 
 }

@@ -7,6 +7,7 @@
 package DAO;
 
 import BookPackage.Book;
+import BookPackage.Borrowings;
 import BookPackage.Reservation;
 import java.util.ArrayList;
 import java.util.List;
@@ -31,4 +32,10 @@ public interface IBookDAO {
     
     ArrayList<Reservation> getAllReservations();
     ArrayList<Reservation> getReservationsByUser(String userPesel);
+    
+    ArrayList<Borrowings> getAllCurrentBorrowings();
+    ArrayList<Borrowings> getCurrentBorrowingsByUser(String userPesel);
+    
+    ArrayList<Borrowings> getAllBorrowings();
+    ArrayList<Borrowings> getBorrowingsByUser(String userPesel);
 }

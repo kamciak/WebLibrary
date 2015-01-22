@@ -7,6 +7,7 @@
 package DAO;
 
 import BookPackage.Book;
+import BookPackage.Borrowings;
 import BookPackage.Reservation;
 import UserPackage.InvalidDataException;
 import UserPackage.User;
@@ -114,9 +115,8 @@ public class BookDAO implements IBookDAO {
         new Date(),
         false
         });
-        
-        
-        this.setBookAvailable(bookId, Boolean.FALSE);
+            
+        //this.setBookAvailable(bookId, Boolean.FALSE);
         this.removeReservationWithoutAvailability(userPesel, bookId);
     }
     
@@ -175,6 +175,35 @@ public class BookDAO implements IBookDAO {
        return (ArrayList<Reservation>) jdbcTemplate.query(query, new ReservationMapper(), new Object[]{userPesel} );
     }
     
+    @Override
+    public ArrayList<Borrowings> getAllCurrentBorrowings(){
+       String query = "SELECT * FROM APP.BORROW WHERE DELETED=false";
+       return (ArrayList<Borrowings>) jdbcTemplate.query(query, new BorrowingsMapper(), new Object[]{} );
+    }
+    
+    @Override
+    public ArrayList<Borrowings> getCurrentBorrowingsByUser(String userPesel){
+       String query = "SELECT * FROM APP.BORROW"
+                        + " INNER JOIN WL_USER on USRID = USRLOGIN"
+                        + " INNER JOIN BOOK on BOOKID = ID "
+                        + " WHERE USRID = ? AND DELETED=false";
+       return (ArrayList<Borrowings>) jdbcTemplate.query(query, new BorrowingsMapper(), new Object[]{userPesel} );
+    }
+    
+    @Override
+    public ArrayList<Borrowings> getAllBorrowings(){
+       String query = "SELECT * FROM APP.BORROW";
+       return (ArrayList<Borrowings>) jdbcTemplate.query(query, new BorrowingsMapper(), new Object[]{} );
+    }
+    
+    @Override
+    public ArrayList<Borrowings> getBorrowingsByUser(String userPesel){
+       String query = "SELECT * FROM APP.BORROW"
+                        + " INNER JOIN WL_USER on USRID = USRLOGIN"
+                        + " INNER JOIN BOOK on BOOKID = ID "
+                        + " WHERE USRID = ?";
+       return (ArrayList<Borrowings>) jdbcTemplate.query(query, new BorrowingsMapper(), new Object[]{userPesel} );
+    }
     
     
     
@@ -211,6 +240,24 @@ public class BookDAO implements IBookDAO {
         resv.setUserName(rs.getString("USRNAME") );
         resv.setDate(rs.getDate("DATE"));
         
+        return resv;
+      }
+    }
+    
+    protected static final class BorrowingsMapper implements ParameterizedRowMapper
+    {
+      @Override
+      public Borrowings mapRow(ResultSet rs, int rowNum)
+      throws SQLException 
+      {
+        Borrowings resv = new Borrowings();
+        resv.setUserPesel(rs.getString("USRID") );
+        resv.setBookId(rs.getInt("BOOKID") );
+        resv.setBookTitle(rs.getString("TITLE") );
+        resv.setAuthor(rs.getString("AUTHOR") );
+        resv.setUserName(rs.getString("USRNAME") );
+        resv.setDate(rs.getDate("DATE"));
+        resv.setDeleted(rs.getBoolean("DELETED"));
         return resv;
       }
     }
