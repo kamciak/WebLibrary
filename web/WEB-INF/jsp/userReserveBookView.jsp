@@ -1,7 +1,7 @@
 <%-- 
-    Document   : adminEditBookView
-    Created on : 2015-01-21, 19:13:26
-    Author     : Kamciak
+    Document   : userReserveBookView
+    Created on : 2015-01-22, 15:04:14
+    Author     : kamil
 --%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -16,11 +16,7 @@
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
     <title>WebLibrary</title>
 </head>
-
 <body>
-    <c:if test="${sessionScope.userGrants==null || sessionScope.userGrants != true}">
-            <c:redirect url="index.htm"/>
-   </c:if>
     <div id="content">
         <div id="menu_top">
                 <a href="index.htm"><img border="0" src="${pageContext.request.contextPath}/img/strona_glowna_top.jpg"></a>
@@ -41,40 +37,11 @@
             <br />
         </div>
         <div id="info">
-            <!-- TUTAJ ZMIENIAMY ZAWARTOSC -->
-            <div class="legend">
-                <p>Tytuł:</p>
-                <p>Autor:</p>
-                <p>ISBN:</p>
-                <p>Rok:</p>
-            </div>
-            <div class="fields">
-                <spring:nestedPath path="book">
-                    <form action="" method="post">
-                        <spring:bind path="title">
-                            <input type="text" name="${status.expression}" value="${current_book.title}">
-                        </spring:bind>
-                        <br />
-                        <spring:bind path="author">
-                            <input type="text" name="${status.expression}" value="${current_book.author}">
-                        </spring:bind>
-                        <br />
-                        <spring:bind path="isbn">
-                            <input type="text" name="${status.expression}" value="${current_book.isbn}">
-                        </spring:bind>
-                        <br />
-                        <spring:bind path="year">
-                            <input type="text" name="${status.expression}" value="${current_book.year}">
-                        </spring:bind>
-                        <br />
-                        <br />
-                         <input src="${pageContext.request.contextPath}/img/edytuj.jpg" type="image" value="" />
-                    </form>
-                </spring:nestedPath>
-                    
-                </div>
-                
-                        
+                <!-- TUTAJ ZMIENIAMY ZAWARTOSC -->
+                <h3>Wypozyczono poprawnie ksiazke</h3>
+                <br />
+                <a href="paneladmin.htm">Powrót do panelu admina</a><br />
+                <br />
         </div>
         <div id="footer">
             <img border="0" src="${pageContext.request.contextPath}/img/stopka.jpg">

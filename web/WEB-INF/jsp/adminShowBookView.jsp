@@ -68,7 +68,7 @@
                     
                 </table>
             </div>
-                <a href="logout.htm">Wyloguj</a>
+                <a href="paneladmin.htm">Powrót</a>
         </div>
         <div id="footer">
             <img border="0" src="${pageContext.request.contextPath}/img/stopka.jpg">
