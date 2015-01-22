@@ -54,7 +54,7 @@
                         <td ></td>
                         <c:forEach items="${listOfReservations}" var="reservation">
                         <tr>
-                           <td><c:out value="${reservation.title}"/></td>
+                           <td><c:out value="${reservation.bookTitle}"/></td>
                            <td><c:out value="${reservation.author}"/></td>
                            <td><c:out value="${reservation.date}"/></td>
                        </tr>
