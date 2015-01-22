@@ -21,6 +21,36 @@
             <c:redirect url="/paneluser.htm"/>
         </c:if>
     </c:if>
-    
+    <div id="content">
+        <div id="menu_top">
+                <a href="index.htm"><img border="0" src="${pageContext.request.contextPath}/img/strona_glowna_top.jpg"></a>
+                <a href="contact.htm"><img border="0" src="${pageContext.request.contextPath}/img/kontakt_top.jpg"></a>
+                <br />
+        </div>
+        <div class="clear"></div>
+        <div id="top">
+            <img src="${pageContext.request.contextPath}/img/top.jpg">
+        </div>
+        <div id="left">
+            <a href="index.htm" title="Wróć na sam początek"><img border="0" src="${pageContext.request.contextPath}/img/strona_glowna_menu.jpg"></a><br>
+            <a href="/contact.htm" title="Skontaktuj się z nami!"><img border="0" src="${pageContext.request.contextPath}/img/kontakt_menu.jpg"></a><br>
+            <br />
+            <img border="0" src="${pageContext.request.contextPath}/img/inne.jpg">
+            <br /><br />
+            <a href="http://www.efs.pl/" title="Europejski Fundusz Społeczny"><img border="0" src="${pageContext.request.contextPath}/img/efs.jpg"></a><a href="https://www.przyjaznaszkola.pl/" title="Przyjazna Szkoła"><img border="0" src="${pageContext.request.contextPath}/img/przyjazna_szkola.jpg"></a>
+            <br />
+        </div>
+        <div id="info">
+                <!-- TUTAJ ZMIENIAMY ZAWARTOSC -->
+                <h3>Logowanie nie powiodło się.</h3>
+                <br />
+                <h1>${loginMsg}</h1>
+                <a href="index.htm">Spróbuj ponownie</a><br />
+                <br />
+        </div>
+        <div id="footer">
+            <img border="0" src="${pageContext.request.contextPath}/img/stopka.jpg">
+        </div>
+    </div>
 </body>
 </html>
