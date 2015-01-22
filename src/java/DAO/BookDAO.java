@@ -13,6 +13,7 @@ import UserPackage.User;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.sql.DataSource;
@@ -43,7 +44,7 @@ public class BookDAO implements IBookDAO {
         book.getAuthor(),
         book.getIsbn(),
         book.getYear(),
-        book.getAvailable(),
+        true,
         });
     }
     
@@ -92,11 +93,12 @@ public class BookDAO implements IBookDAO {
     
     @Override
     public void reserveBook(String userPesel, Integer bookId){
-        String query = "INSERT INTO RESERVATION(USRID, BOOKID) VALUES(?,?)";
+        String query = "INSERT INTO RESERVATION(USRID, BOOKID, DATE) VALUES(?,?,?)";
         
         jdbcTemplate.update(query, new Object[] {
         userPesel,
         bookId,
+        new Date(),
         });
         
         this.setBookAvailable(bookId, Boolean.FALSE);
@@ -104,11 +106,13 @@ public class BookDAO implements IBookDAO {
     
     @Override
     public void borrowBook(String userPesel, Integer bookId){
-        String query = "INSERT INTO BORROW(USRID, BOOKID, DELETED) VALUES(?,?, false)";
+        String query = "INSERT INTO BORROW(USRID, BOOKID, DATE, DELETED) VALUES(?,?,?,?)";
         
         jdbcTemplate.update(query, new Object[] {
         userPesel,
         bookId,
+        new Date(),
+        false
         });
         
         
@@ -164,9 +168,10 @@ public class BookDAO implements IBookDAO {
     
     @Override
     public ArrayList<Reservation> getReservationsByUser(String userPesel){
-       String query = "SELECT * FROM APP.RESERVATION WHERE USRID = ?"
+       String query = "SELECT * FROM APP.RESERVATION"
                         + " INNER JOIN WL_USER on USRID = USRLOGIN"
-                        + " INNER JOIN BOOK on BOOKID = ID ";
+                        + " INNER JOIN BOOK on BOOKID = ID "
+                        + " WHERE USRID = ?";
        return (ArrayList<Reservation>) jdbcTemplate.query(query, new ReservationMapper(), new Object[]{userPesel} );
     }
     
@@ -204,7 +209,7 @@ public class BookDAO implements IBookDAO {
         resv.setBookTitle(rs.getString("TITLE") );
         resv.setAuthor(rs.getString("AUTHOR") );
         resv.setUserName(rs.getString("USRNAME") );
-        resv.setReservationDate(rs.getDate("DATE"));
+        resv.setDate(rs.getDate("DATE"));
         
         return resv;
       }

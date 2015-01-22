@@ -44,7 +44,7 @@ public class UserDAO implements IUserDAO {
             user.getStreet(),
             user.getPost_code(),
             user.getPhone_number(),
-            user.getAdmin(),});
+            false,});
     }
 
     @Override

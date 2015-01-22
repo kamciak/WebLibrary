@@ -53,19 +53,23 @@ public class Reservation {
         this._author = _author;
     }
 
-    public Date getReservationDate() {
-        return _reservationDate;
+    
+
+
+    public Date getDate() {
+        return _date;
     }
 
-    public void setReservationDate(Date _reservationDate) {
-        this._reservationDate = _reservationDate;
+    public void setDate(Date _date) {
+        this._date = _date;
     }
+    
     
     private Integer _bookId;
     private String _userPesel;
     private String _bookTitle;
     private String _userName;
     private String _author;
-    private Date _reservationDate;
+    private Date _date;
     
 }
