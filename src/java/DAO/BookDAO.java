@@ -165,8 +165,8 @@ public class BookDAO implements IBookDAO {
     @Override
     public ArrayList<Reservation> getReservationsByUser(String userPesel){
        String query = "SELECT * FROM APP.RESERVATION WHERE USRID = ?"
-                        + "INNER JOIN WL_USER on USRID = USRLOGIN"
-                        + "INNER JOIN BOOK on BOOKID = ID ";
+                        + " INNER JOIN WL_USER on USRID = USRLOGIN"
+                        + " INNER JOIN BOOK on BOOKID = ID ";
        return (ArrayList<Reservation>) jdbcTemplate.query(query, new ReservationMapper(), new Object[]{userPesel} );
     }
     
