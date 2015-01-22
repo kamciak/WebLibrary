@@ -164,7 +164,9 @@ public class BookDAO implements IBookDAO {
     
     @Override
     public ArrayList<Reservation> getReservationsByUser(String userPesel){
-       String query = "SELECT * FROM APP.RESERVATION WHERE USRID = ?";
+       String query = "SELECT * FROM APP.RESERVATION WHERE USRID = ?"
+                        + "INNER JOIN WL_USER on USRID = USRLOGIN"
+                        + "INNER JOIN BOOK on BOOKID = ID ";
        return (ArrayList<Reservation>) jdbcTemplate.query(query, new ReservationMapper(), new Object[]{userPesel} );
     }
     
@@ -199,6 +201,10 @@ public class BookDAO implements IBookDAO {
         Reservation resv = new Reservation();
         resv.setUserPesel(rs.getString("USRID") );
         resv.setBookId(rs.getInt("BOOKID") );
+        resv.setBookTitle(rs.getString("TITLE") );
+        resv.setAuthor(rs.getString("AUTHOR") );
+        resv.setUserName(rs.getString("USRNAME") );
+        resv.setReservationDate(rs.getDate("DATE"));
         
         return resv;
       }

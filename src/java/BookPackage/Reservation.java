@@ -6,6 +6,8 @@
 
 package BookPackage;
 
+import java.util.Date;
+
 /**
  *
  * @author Tomek
@@ -43,8 +45,27 @@ public class Reservation {
         this._userName = _userName;
     }
     
+    public String getAuthor() {
+        return _author;
+    }
+
+    public void setAuthor(String _author) {
+        this._author = _author;
+    }
+
+    public Date getReservationDate() {
+        return _reservationDate;
+    }
+
+    public void setReservationDate(Date _reservationDate) {
+        this._reservationDate = _reservationDate;
+    }
+    
     private Integer _bookId;
     private String _userPesel;
     private String _bookTitle;
     private String _userName;
+    private String _author;
+    private Date _reservationDate;
+    
 }
