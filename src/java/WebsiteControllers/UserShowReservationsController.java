@@ -5,6 +5,9 @@
  */
 package WebsiteControllers;
 
+import BookPackage.Book;
+import BookPackage.Reservation;
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.web.servlet.ModelAndView;
@@ -13,10 +16,9 @@ import service.UniversalService;
 
 /**
  *
- * @author kamil
+ * @author Kamciak
  */
-public class UserReserveBookController extends AbstractController{
-
+public class UserShowReservationsController  extends AbstractController{
     private UniversalService universalService;
 
     public UniversalService getUniversalService() {
@@ -26,27 +28,15 @@ public class UserReserveBookController extends AbstractController{
     public void setUniversalService(UniversalService universalService) {
         this.universalService = universalService;
     }
-    
     @Override
-    //@RequestParam("name1") String one, @RequestParam("name2") String two, @RequestParam("name3") String three
     protected ModelAndView handleRequestInternal(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        Integer bookId = Integer.parseInt(request.getParameter("bookid"));
-        String userPesel = request.getParameter("userpesel");
+        ModelAndView mv = new ModelAndView("userShowReservationsView");
+        String userPesel = (String)request.getSession().getAttribute("userPesel");
+        List<Reservation> listOfReservations = universalService.getReservationsByUser(userPesel);
+        mv.addObject("listOfReservations",listOfReservations);
         
-        System.out.println("" + bookId + " pesel: "+userPesel);
-        universalService.reserveBook(userPesel, bookId);
-        ModelAndView mv = new ModelAndView("userReserveBookView");
         return mv;
+        
     }
+
 }
-
-/*
-@RequestMapping(method=RequestMethod.GET)
-    public String dosmth(HttpServletRequest request, @RequestParam("name1") String one, @RequestParam("name2") String two, @RequestParam("name3") String three) {
-
-        JOptionPane.showMessageDialog(null,
-                " Param 1 is:" +one +" \n Param 2 is: " +two +" \n Param 3 is: " +three);
-
-        return "redirect:/";
-    }
-*/

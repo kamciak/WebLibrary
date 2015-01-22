@@ -55,6 +55,7 @@ http://www.springframework.org/schema/mvc
     <bean class="WebsiteControllers.UserShowBooksController"  p:universalService-ref="universalService"/>
     <bean class="WebsiteControllers.AdminDeleteUserController"  p:universalService-ref="universalService"/>
     <bean class="WebsiteControllers.UserReserveBookController"  p:universalService-ref="universalService"/>
+    <bean class="WebsiteControllers.UserShowReservationsController"  p:universalService-ref="universalService"/>
     
     <mvc:resources mapping="/img/**" location="/img/" />
 </beans>

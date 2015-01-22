@@ -74,7 +74,7 @@
                     
                 </table>
             </div>
-                <a href="paneladmin.htm">Powrót</a>
+                <a href="paneluser.htm">Powrót</a>
         </div>
         <div id="footer">
             <img border="0" src="${pageContext.request.contextPath}/img/stopka.jpg">
