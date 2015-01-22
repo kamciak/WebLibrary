@@ -111,8 +111,11 @@ public class BookDAO implements IBookDAO {
         bookId,
         });
         
+        
+        this.setBookAvailable(bookId, Boolean.FALSE);
         this.removeReservationWithoutAvailability(userPesel, bookId);
     }
+    
     
     private void removeReservationWithoutAvailability(String userPesel, Integer bookId){
         String query = "DELETE FROM RESERVATION WHERE USRID=? AND BOOKID=?";
