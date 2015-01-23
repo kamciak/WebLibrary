@@ -272,7 +272,7 @@ public class BookDAO implements IBookDAO {
         resv.setBookId(rs.getInt("BOOKID") );
         resv.setBookTitle(rs.getString("TITLE") );
         resv.setAuthor(rs.getString("AUTHOR") );
-        resv.setUserName(rs.getString("USRNAME") );
+        resv.setUserName(rs.getString("USRSURNAME") );
         resv.setDate(rs.getDate("DATE"));
         resv.setDeleted(rs.getBoolean("DELETED"));
         resv.setReturnDate(rs.getDate("RETURNDATE"));
