@@ -28,7 +28,6 @@ public class UserReserveBookController extends AbstractController{
     }
     
     @Override
-    //@RequestParam("name1") String one, @RequestParam("name2") String two, @RequestParam("name3") String three
     protected ModelAndView handleRequestInternal(HttpServletRequest request, HttpServletResponse response) throws Exception {
         Integer bookId = Integer.parseInt(request.getParameter("bookid"));
         String userPesel = request.getParameter("userpesel");
@@ -39,14 +38,3 @@ public class UserReserveBookController extends AbstractController{
         return mv;
     }
 }
-
-/*
-@RequestMapping(method=RequestMethod.GET)
-    public String dosmth(HttpServletRequest request, @RequestParam("name1") String one, @RequestParam("name2") String two, @RequestParam("name3") String three) {
-
-        JOptionPane.showMessageDialog(null,
-                " Param 1 is:" +one +" \n Param 2 is: " +two +" \n Param 3 is: " +three);
-
-        return "redirect:/";
-    }
-*/

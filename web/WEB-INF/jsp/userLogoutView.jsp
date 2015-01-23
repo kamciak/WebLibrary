@@ -1,7 +1,7 @@
 <%-- 
     Document   : userLogoutView
     Created on : 2015-01-20, 21:13:45
-    Author     : Kamciak
+    Author     : Kamil Gzyl
 --%>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>

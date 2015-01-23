@@ -15,7 +15,7 @@ import service.UniversalService;
 
 /**
  *
- * @author Kamciak
+ * @author Kamil Gzyl
  */
 public class UserShowBorrowedBooksController extends AbstractController{
     private UniversalService universalService;
@@ -35,7 +35,5 @@ public class UserShowBorrowedBooksController extends AbstractController{
         mv.addObject("listOfBorrowings",listOfBorrowings);
         
         return mv;
-        
     }
-
 }

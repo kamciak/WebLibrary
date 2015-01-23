@@ -1,7 +1,7 @@
 <%-- 
     Document   : UserShowHistoryView
     Created on : 2015-01-23, 20:25:54
-    Author     : Kamciak
+    Author     : Kamil Gzyl
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

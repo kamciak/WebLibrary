@@ -1,7 +1,7 @@
 <%-- 
     Document   : userShowReservationsView
     Created on : 2015-01-22, 19:47:53
-    Author     : Kamciak
+    Author     : Kamil Gzyl
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

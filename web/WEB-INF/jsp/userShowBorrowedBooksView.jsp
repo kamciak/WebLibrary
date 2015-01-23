@@ -1,7 +1,7 @@
 <%-- 
     Document   : userShowBorrowedBooksView
     Created on : 2015-01-23, 19:07:09
-    Author     : Kamciak
+    Author     : Kamil Gzyl
 --%>
 
 

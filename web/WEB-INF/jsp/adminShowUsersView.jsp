@@ -1,7 +1,7 @@
 <%-- 
     Document   : adminShowUserView
     Created on : 2015-01-21, 20:16:14
-    Author     : Kamciak
+    Author     : Kamil Gzyl
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

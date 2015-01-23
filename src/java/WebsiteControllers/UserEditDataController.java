@@ -15,7 +15,7 @@ import service.UniversalService;
 
 /**
  *
- * @author Kamciak
+ * @author Kamil Gzyl
  */
 public class UserEditDataController extends SimpleFormController {
     
@@ -54,10 +54,8 @@ public class UserEditDataController extends SimpleFormController {
         String userPesel = (String)request.getSession().getAttribute("userPesel");
         User user = (User)command;
         
-        
         user.setPesel(userPesel);
         universalService.editUser(user);
-        
         
         return mv;
     }

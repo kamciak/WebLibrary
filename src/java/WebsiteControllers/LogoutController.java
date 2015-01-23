@@ -13,7 +13,7 @@ import service.UniversalService;
 
 /**
  *
- * @author Kamciak
+ * @author Kamil Gzyl
  */
 public class LogoutController extends AbstractController{
     private UniversalService universalService;
@@ -31,5 +31,4 @@ public class LogoutController extends AbstractController{
         System.out.println("SESSION: " + request.getSession().getAttribute("userPesel"));
         return new ModelAndView("userLogoutView");
     }
-    
 }

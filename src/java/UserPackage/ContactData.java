@@ -7,7 +7,7 @@ package UserPackage;
 
 /**
  *
- * @author Kamciak
+ * @author Kamil Gzyl
  */
 public class ContactData {
     

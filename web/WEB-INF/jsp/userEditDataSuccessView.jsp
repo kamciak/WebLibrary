@@ -1,7 +1,7 @@
 <%-- 
     Document   : userEditDataSuccessView
     Created on : 2015-01-22, 20:32:42
-    Author     : Kamciak
+    Author     : Kamil Gzyl
 --%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>

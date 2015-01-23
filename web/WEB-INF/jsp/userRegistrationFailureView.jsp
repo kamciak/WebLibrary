@@ -1,7 +1,7 @@
 <%-- 
     Document   : userRegistrationFailureView
     Created on : 2015-01-23, 21:23:26
-    Author     : Kamciak
+    Author     : Kamil Gzyl
 --%>
 
 

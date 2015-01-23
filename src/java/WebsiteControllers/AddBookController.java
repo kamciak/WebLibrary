@@ -15,7 +15,7 @@ import service.UniversalService;
 
 /**
  *
- * @author Kamciak
+ * @author Kamil Gzyl
  */
 public class AddBookController extends SimpleFormController{
     private UniversalService universalService;
@@ -39,9 +39,6 @@ public class AddBookController extends SimpleFormController{
     protected ModelAndView onSubmit(HttpServletRequest request, HttpServletResponse response, Object command, BindException errors) throws Exception{
         ModelAndView mv = new ModelAndView(getSuccessView());
         Book book = (Book)command;
-        
-        //book.setAvailable(Boolean.TRUE);
-        
         universalService.addBook(book);
         mv.addObject("addBookMessage", "Dodano ksiazke");
 

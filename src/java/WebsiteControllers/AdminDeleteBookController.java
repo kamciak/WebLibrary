@@ -13,7 +13,7 @@ import service.UniversalService;
 
 /**
  *
- * @author Kamciak
+ * @author Kamil Gzyl
  */
 public class AdminDeleteBookController extends AbstractController{
 
@@ -35,6 +35,4 @@ public class AdminDeleteBookController extends AbstractController{
         ModelAndView mv = new ModelAndView("adminDeleteBookView");
         return mv;
     }
-
-    
 }

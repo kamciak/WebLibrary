@@ -17,7 +17,7 @@ import service.UniversalService;
 
 /**
  *
- * @author Kamciak
+ * @author Kamil Gzyl
  */
 public class IndexController extends SimpleFormController{
     private UniversalService universalService;
@@ -58,5 +58,4 @@ public class IndexController extends SimpleFormController{
 
         return mv;
     }
-    
 }

@@ -15,7 +15,7 @@ import service.UniversalService;
 
 /**
  *
- * @author Kamciak
+ * @author Kamil Gzyl
  */
 public class AdminShowBorrowedBooksController extends AbstractController{
     private UniversalService universalService;

@@ -13,7 +13,7 @@ import service.UniversalService;
 
 /**
  *
- * @author Kamciak
+ * @author Kamil Gzyl
  */
 public class PanelAdminController extends AbstractController{
     private UniversalService universalService;
@@ -29,5 +29,4 @@ public class PanelAdminController extends AbstractController{
     protected ModelAndView handleRequestInternal(HttpServletRequest hsr, HttpServletResponse hsr1) throws Exception {
         return new ModelAndView("panelAdminView");
     }
-    
 }

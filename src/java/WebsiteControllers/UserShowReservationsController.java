@@ -15,7 +15,7 @@ import service.UniversalService;
 
 /**
  *
- * @author Kamciak
+ * @author Kamil Gzyl
  */
 public class UserShowReservationsController  extends AbstractController{
     private UniversalService universalService;
@@ -35,7 +35,5 @@ public class UserShowReservationsController  extends AbstractController{
         mv.addObject("listOfReservations",listOfReservations);
         
         return mv;
-        
     }
-
 }

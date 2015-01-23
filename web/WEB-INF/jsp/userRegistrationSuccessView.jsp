@@ -1,7 +1,7 @@
 <%-- 
     Document   : registrationMessage
     Created on : 2014-12-16, 17:59:48
-    Author     : Kamciak
+    Author     : Kamil Gzyl
 --%>
 
 

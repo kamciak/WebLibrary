@@ -7,7 +7,7 @@ package UserPackage;
 
 /**
  *
- * @author Kamciak
+ * @author Kamil Gzyl
  */
 public class UserChecker {
     public static Boolean checkUser(User user){

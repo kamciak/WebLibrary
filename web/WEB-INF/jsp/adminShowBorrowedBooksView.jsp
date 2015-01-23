@@ -1,7 +1,7 @@
 <%-- 
     Document   : adminShowBorrowedBooksView
     Created on : 2015-01-23, 20:48:54
-    Author     : Kamciak
+    Author     : Kamil Gzyl
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

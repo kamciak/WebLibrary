@@ -1,7 +1,7 @@
 <%-- 
     Document   : adminAcceptReservationView
     Created on : 2015-01-23, 19:56:23
-    Author     : Kamciak
+    Author     : Kamil Gzyl
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>

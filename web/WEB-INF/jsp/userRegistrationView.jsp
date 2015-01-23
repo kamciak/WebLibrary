@@ -1,7 +1,7 @@
 <%-- 
     Document   : userRegistrationView
     Created on : 2014-12-16, 18:01:45
-    Author     : Kamciak
+    Author     : Kamil Gzyl
 --%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>

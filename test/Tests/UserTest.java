@@ -8,7 +8,7 @@ import org.junit.Test;
 
 /**
  *
- * @author Kamciak
+ * @author Kamil Gzyl
  */
 
 public class UserTest {

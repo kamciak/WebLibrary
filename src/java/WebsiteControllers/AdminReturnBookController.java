@@ -13,7 +13,7 @@ import service.UniversalService;
 
 /**
  *
- * @author Kamciak
+ * @author Kamil Gzyl
  */
 public class AdminReturnBookController extends AbstractController{
 

@@ -1,7 +1,7 @@
 <%-- 
     Document   : panelAdminView
     Created on : 2015-01-20, 20:41:42
-    Author     : Kamciak
+    Author     : Kamil Gzyl
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

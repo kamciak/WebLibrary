@@ -15,7 +15,7 @@ import service.UniversalService;
 
 /**
  *
- * @author Kamciak
+ * @author Kamil Gzyl
  */
 public class AdminShowUsersController  extends AbstractController{
     private UniversalService universalService;
@@ -37,7 +37,6 @@ public class AdminShowUsersController  extends AbstractController{
     
         mv.addObject("listOfUsers",listOfUsers);
         
-        return mv;
-        
+        return mv; 
     }
 }

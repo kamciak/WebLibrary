@@ -17,7 +17,7 @@ import service.UniversalService;
 
 /**
  *
- * @author Kamciak
+ * @author Kamil Gzyl
  */
 public class RegisterController extends SimpleFormController {
     
@@ -64,5 +64,4 @@ public class RegisterController extends SimpleFormController {
         }
         return mv;
     }
-  
 }

@@ -1,7 +1,7 @@
 <%-- 
     Document   : adminEditBookView
     Created on : 2015-01-21, 19:13:26
-    Author     : Kamciak
+    Author     : Kamil Gzyl
 --%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>

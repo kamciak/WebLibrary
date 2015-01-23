@@ -1,7 +1,7 @@
 <%-- 
     Document   : adminEditUserView
     Created on : 2015-01-21, 20:30:18
-    Author     : Kamciak
+    Author     : Kamil Gzyl
 --%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>

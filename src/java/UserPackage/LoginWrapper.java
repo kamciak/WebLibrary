@@ -9,7 +9,7 @@ import javax.servlet.http.Cookie;
 
 /**
  *
- * @author Kamciak
+ * @author Kamil Gzyl
  */
 public class LoginWrapper {
     

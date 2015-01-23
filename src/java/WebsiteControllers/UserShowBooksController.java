@@ -34,7 +34,5 @@ public class UserShowBooksController extends AbstractController{
         mv.addObject("listOfBooks",listOfBooks);
         
         return mv;
-        
-    }
-    
+    } 
 }

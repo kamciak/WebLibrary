@@ -15,7 +15,7 @@ import service.UniversalService;
 
 /**
  *
- * @author Kamciak
+ * @author Kamil Gzyl
  */
 public class UserShowHistoryController extends AbstractController{
     private UniversalService universalService;
@@ -35,7 +35,5 @@ public class UserShowHistoryController extends AbstractController{
         mv.addObject("historyList",historyList);
         
         return mv;
-        
     }
-
 }
