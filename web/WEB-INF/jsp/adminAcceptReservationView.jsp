@@ -61,7 +61,7 @@
                            <td><c:out value="${reservation.author}"/></td>
                            <td><c:out value="${reservation.date}"/></td>
 
-                           <td><a href="adminacceptbookreservation.htm?userpesel=${sessionScope.userPesel}&bookid=${reservation.bookId}"><c:out value="Zaakceptuj"/></a></td>
+                           <td><a href="adminacceptbookreservation.htm?userpesel=${reservation.userPesel}&bookid=${reservation.bookId}"><c:out value="Zaakceptuj"/></a></td>
                        </tr>
                     </c:forEach>
                     </tr>
