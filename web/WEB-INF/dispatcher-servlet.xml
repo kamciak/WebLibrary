@@ -60,6 +60,7 @@ http://www.springframework.org/schema/mvc
     <bean class="WebsiteControllers.UserShowBorrowedBooksController"  p:universalService-ref="universalService"/>
     <bean class="WebsiteControllers.AdminAcceptBookReservationController"  p:universalService-ref="universalService"/>
     <bean class="WebsiteControllers.AdminAcceptReservationController"  p:universalService-ref="universalService"/>
+    <bean class="WebsiteControllers.UserShowHistoryController"  p:universalService-ref="universalService"/>
     
     <mvc:resources mapping="/img/**" location="/img/" />
 </beans>
