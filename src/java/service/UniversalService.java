@@ -76,6 +76,10 @@ public class UniversalService {
         return userDAO.getAllUsers();
     }
     
+    public Boolean loginAvailable(String userPesel){
+        return userDAO.loginAvailable(userPesel);
+    }
+    
     
     public LoginWrapper login(LoginData login_data){
         User user = getUser(login_data.getPesel());

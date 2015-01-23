@@ -20,4 +20,6 @@ public interface IUserDAO {
     void editUser(User user);
     ArrayList<User> getAllUsers();
     
+    Boolean loginAvailable(String userPesel);
+    
 }
