@@ -1,13 +1,11 @@
 <%-- 
-    Document   : userShowBorrowedBooksView
-    Created on : 2015-01-23, 19:07:09
+    Document   : contactView
+    Created on : 2015-01-18, 20:57:45
     Author     : Kamciak
 --%>
-
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
     "http://www.w3.org/TR/html4/loose.dtd">
 
@@ -17,11 +15,7 @@
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
     <title>WebLibrary</title>
 </head>
-
 <body>
-    <c:if test="${sessionScope.userPesel==null}">
-            <c:redirect url="index.htm"/>
-   </c:if>
     <div id="content">
         <div id="menu_top">
                 <a href="index.htm"><img border="0" src="${pageContext.request.contextPath}/img/strona_glowna_top.jpg"></a>
@@ -43,27 +37,7 @@
         </div>
         <div id="info">
                 <!-- TUTAJ ZMIENIAMY ZAWARTOSC -->
-                <h1>Moje rezerwacje</h1>
-                
-                
-                <div class="tableContainer" >
-                <table >
-                    <tr>
-                        <td>Tytuł</td>
-                        <td>Autor</td>
-                        <td>Data wypożyczenia</td>
-                        <c:forEach items="${listOfBorrowings}" var="borrowedBook">
-                        <tr>
-                           <td><c:out value="${borrowedBook.bookTitle}"/></td>
-                           <td><c:out value="${borrowedBook.author}"/></td>
-                           <td><c:out value="${borrowedBook.date}"/></td>
-                       </tr>
-                    </c:forEach>
-                    </tr>
-                    
-                </table>
-            </div>
-                <a href="paneluser.htm">Powrót</a>
+                <h3>Kontakt</h3>
         </div>
         <div id="footer">
             <img border="0" src="${pageContext.request.contextPath}/img/stopka.jpg">

@@ -32,7 +32,7 @@
         </div>
         <div id="left">
             <a href="index.htm" title="Wróć na sam początek"><img border="0" src="${pageContext.request.contextPath}/img/strona_glowna_menu.jpg"></a><br>
-            <a href="/contact.htm" title="Skontaktuj się z nami!"><img border="0" src="${pageContext.request.contextPath}/img/kontakt_menu.jpg"></a><br>
+            <a href="contact.htm" title="Skontaktuj się z nami!"><img border="0" src="${pageContext.request.contextPath}/img/kontakt_menu.jpg"></a><br>
             <br />
             <img border="0" src="${pageContext.request.contextPath}/img/inne.jpg">
             <br /><br />
