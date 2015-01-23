@@ -1,9 +1,8 @@
 <%-- 
-    Document   : panelAdminView
-    Created on : 2015-01-20, 20:41:42
+    Document   : adminAcceptReservationView
+    Created on : 2015-01-23, 19:56:23
     Author     : Kamciak
 --%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -18,7 +17,7 @@
 </head>
 
 <body>
-    <c:if test="${sessionScope.userPesel == null || sessionScope.userGrants != true}">
+    <c:if test="${sessionScope.userGrants==null || sessionScope.userGrants != true}">
             <c:redirect url="index.htm"/>
    </c:if>
     <div id="content">
@@ -42,24 +41,34 @@
         </div>
         <div id="info">
                 <!-- TUTAJ ZMIENIAMY ZAWARTOSC -->
-                <h3> Admin panel</h3>
-                <center>
-                    <a href="adminacceptreservation.htm"><img src="${pageContext.request.contextPath}/img/zaakceptuj_rezerwacje.jpg" /></a><br />
-                    <br />
-                    <a href="addbook.htm"><img src="${pageContext.request.contextPath}/img/dodaj_ksiazke.jpg" /></a><br />
-                    <br />
-                    <a href="adminshowbook.htm"><img src="${pageContext.request.contextPath}/img/wyswietl_ksiazki.jpg" /></a><br />
-                    <br />
-                    <a href="adminshowusers.htm"><img src="${pageContext.request.contextPath}/img/wyswietl_uzytkownikow.jpg" /></a><br />
-                    <br />
+                <h1>Edit book2</h1>
+                
+                
+                <div class="tableContainer" >
+                <table >
+                    <tr>
+                        <td>Pesel</td>
+                        <td>Imię</td>
+                        <td>Tytuł</td>
+                        <td>Autor</td>
+                        <td>Data</td>
+                        <td></td>
+                        <c:forEach items="${listOfReservations}" var="reservation">
+                        <tr>
+                           <td><c:out value="${reservation.userpesel}"/></td>
+                           <td><c:out value="${reservation.username}"/></td>
+                           <td><c:out value="${reservation.booktitle}"/></td>
+                           <td><c:out value="${reservation.author}"/></td>
+                           <td><c:out value="${reservation.date}"/></td>
+
+                           <td><a href="adminacceptbookreservation.htm?$userpesel=${sessionScope.userPesel}&bookid=${book.id}"><c:out value="Zaakceptuj"/></a></td>
+                       </tr>
+                    </c:forEach>
+                    </tr>
                     
-                    
-                </center>
-                
-                
-                
-                
-                <a href="logout.htm">Wyloguj</a>
+                </table>
+            </div>
+                <a href="paneladmin.htm">Powrót</a>
         </div>
         <div id="footer">
             <img border="0" src="${pageContext.request.contextPath}/img/stopka.jpg">
