@@ -194,7 +194,9 @@ public class BookDAO implements IBookDAO {
     
     @Override
     public ArrayList<Borrowings> getAllBorrowings(){
-       String query = "SELECT * FROM APP.BORROW";
+       String query = "SELECT * FROM APP.BORROW B"
+                      + " INNER JOIN WL_USER U on B.USRID = U.USRLOGIN"
+                        + " INNER JOIN BOOK BK on B.BOOKID = BK.ID";
        return (ArrayList<Borrowings>) jdbcTemplate.query(query, new BorrowingsMapper(), new Object[]{} );
     }
     
