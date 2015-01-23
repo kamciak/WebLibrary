@@ -8,23 +8,17 @@ public class User {
     
     
     public User(String name, String surename, String pesel, String password, String country, String city , String post_code, String street, String phone_number, Boolean admin) throws InvalidDataException{
-        try{
             _name = name;
             _surename = surename;
             _country = country;
-            if(checkPesel(pesel))
-                _pesel = pesel;
-            else
-                throw new InvalidPeselException();
+            _pesel = pesel;
             _password = password;
             _city = city;
             _post_code = post_code;
             _street = street;
             _phone_number = phone_number;
             _admin = admin;
-        } catch(InvalidDataException e){
-            System.err.println(e.getMessage());
-        }
+       
     }
     
     
@@ -70,9 +64,7 @@ public class User {
 
     public void setPesel(String _pesel) throws InvalidPeselException {
         
-        if(checkPesel(_pesel))
-            this._pesel = _pesel;
-        else throw new InvalidPeselException();
+        this._pesel = _pesel;
     }
 
     public String getPhone_number() {
@@ -145,24 +137,4 @@ public class User {
     public void setAdmin(Boolean _admin) {
         this._admin = _admin;
     }
-
-
-
-    private boolean checkPesel(String pesel){
-        if (pesel.length() != 11) return false;
-        
-        int[] scales = {1, 3, 7, 9, 1, 3, 7 ,9 ,1 ,3};
-        
-        int control_sum = 0;
-        for (int i = 0; i < 10; i++)
-           control_sum += Integer.parseInt(pesel.substring(i, i+1)) * scales[i];
-  
-        int control_number = Integer.parseInt(pesel.substring(10, 11));
-
-        control_sum %= 10;
-        control_sum = 10 - control_sum;
-        control_sum %= 10;
-
-    return (control_sum == control_number);
-    }    
 }

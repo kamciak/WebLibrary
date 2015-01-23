@@ -1,6 +1,6 @@
 <%-- 
-    Document   : registrationMessage
-    Created on : 2014-12-16, 17:59:48
+    Document   : userRegistrationFailureView
+    Created on : 2015-01-23, 21:23:26
     Author     : Kamciak
 --%>
 
@@ -39,9 +39,9 @@
         </div>
         <div id="info">
                 <!-- TUTAJ ZMIENIAMY ZAWARTOSC -->
-                <h3>Zarejestrowano poprawnie! Możesz się teraz zalogować.</h3>
+                <h3>${errorInfo}</h3>
                 <br />
-                <a href="index.htm">Przejdź do logowania.</a><br />
+                <a href="register.htm">Cofnij</a><br />
                 <br />
         </div>
         <div id="footer">

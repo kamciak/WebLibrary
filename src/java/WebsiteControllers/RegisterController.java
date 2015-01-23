@@ -6,6 +6,7 @@
 package WebsiteControllers;
 
 import UserPackage.User;
+import UserPackage.UserChecker;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.validation.BindException;
@@ -41,10 +42,26 @@ public class RegisterController extends SimpleFormController {
     
     @Override
     protected ModelAndView onSubmit(HttpServletRequest request, HttpServletResponse response, Object command, BindException errors) throws Exception{
-        ModelAndView mv = new ModelAndView(getSuccessView());
+        ModelAndView mv;
         User user = (User)command;
-        mv.addObject("registrationMessage", "Witaj" + user.getName());
-        universalService.addUser(user);
+        
+        if(UserChecker.checkUser(user) && universalService.loginAvailable(user.getPesel())){
+            mv = new ModelAndView(getSuccessView());
+            mv.addObject("registrationMessage", "Witaj" + user.getName());
+            universalService.addUser(user);
+        } else{
+            String info = "Wprowadz wszystkie dane";
+            mv = new ModelAndView("userRegistrationFailureView");
+            
+            if(!(universalService.loginAvailable(user.getPesel())))
+                info = "Użytkownik istnieje w bazie";
+            
+            if(!(UserChecker.checkPesel(user.getPesel())))
+                info = "Niepoprawny numer PESEL";
+            
+            mv.addObject("errorInfo", info);
+            
+        }
         return mv;
     }
   
