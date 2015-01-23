@@ -41,8 +41,8 @@
         </div>
         <div id="info">
                 <!-- TUTAJ ZMIENIAMY ZAWARTOSC -->
-                <h1>Edit book2</h1>
-                
+                <h1>Książki</h1>
+                <hr />
                 
                 <div class="tableContainer" >
                 <table >

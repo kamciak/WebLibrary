@@ -42,7 +42,8 @@
         </div>
         <div id="info">
                 <!-- TUTAJ ZMIENIAMY ZAWARTOSC -->
-                <h3> User panel</h3>
+                <h1>Panel użytkownika</h1>
+                <hr />
                 <center>
                     <a href="usershowbooks.htm"><img src="${pageContext.request.contextPath}/img/wypozycz_ksiazke.jpg" /></a><br />
                     <br />
@@ -54,13 +55,9 @@
                     <br />
                     <a href="usereditdata.htm"><img src="${pageContext.request.contextPath}/img/edytuj_dane.jpg" /></a><br />
                     <br />
-                    
-                    
+
                 </center>
-                
-                
-                
-                
+
                 <a href="logout.htm">Wyloguj</a>
         </div>
         <div id="footer">

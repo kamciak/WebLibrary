@@ -42,7 +42,8 @@
         </div>
         <div id="info">
                 <!-- TUTAJ ZMIENIAMY ZAWARTOSC -->
-                <h1>Edit users</h1>
+                <h1>Użytkownicy</h1>
+                <hr />
                 <div class="tableContainer" >
                 <table >
                     <tr>

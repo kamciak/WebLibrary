@@ -22,6 +22,11 @@ and open the template in the editor.
     padding: 0px;
 }
 
+#menu_top img{
+    display: block;
+    float: left;
+}
+
 #top{
     width: 800px;
     height: 293px;
@@ -147,6 +152,7 @@ and open the template in the editor.
 	-moz-border-radius-topleft:0px;
 	-webkit-border-top-left-radius:0px;
 	border-top-left-radius:0px;
+        margin-top:15px;
 }.tableContainer table{
     border-collapse: collapse;
         border-spacing: 0;
@@ -220,4 +226,61 @@ and open the template in the editor.
 }
 .tableContainer tr:first-child td:last-child{
 	border-width:0px 0px 1px 1px;
+}
+
+
+
+h1{
+    font-weight:normal;
+    color:#a6a6a6;
+    font-size:18px;
+    text-align:left;
+    font-family:tahoma, verdana, arial, sans-serif;
+    margin:0px;
+    padding:0px;
+    
+}
+
+
+h2{
+    font-weight:normal;
+    color:#FF0000;
+    font-size:18px;
+    text-align:left;
+    font-family:tahoma, verdana, arial, sans-serif;
+    margin:0px;
+    padding:0px;
+    
+}
+
+h3{
+    font-weight:normal;
+    color:#329632;
+    font-size:18px;
+    text-align:left;
+    font-family:tahoma, verdana, arial, sans-serif;
+    margin:0px;
+    padding:0px;
+    
+}
+
+hr{
+    margin-top: -1px;
+    
+    height: 0; 
+    border: 0;
+    border-bottom: 1px solid rgba(130, 160, 255, 1);
+    width: 100%;
+    float: left;
+    margin-bottom: 15px;
+}
+
+
+ul.contact{
+    color: #808080;
+    font-size: 12px;
+    font-family: Verdana;
+    margin-left: 40px;
+    margin-bottom: 0px;
+    padding: 0px;
 }

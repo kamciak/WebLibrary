@@ -39,7 +39,7 @@
         </div>
         <div id="info">
                 <!-- TUTAJ ZMIENIAMY ZAWARTOSC -->
-                <h3>${errorInfo}</h3>
+                <h2>${errorInfo}</h2>
                 <br />
                 <a href="register.htm">Cofnij</a><br />
                 <br />

@@ -21,7 +21,7 @@
     </c:if>
     <div id="content">
         <div id="menu_top">
-                <a href="index.htm"><img border="0" src="${pageContext.request.contextPath}/img/strona_glowna_top.jpg"></a>
+                <a href="index.htm"><img border="0" src="${pageContext.request.contextPath}/img/strona_glowna_top.jpg" ></a>
                 <a href="contact.htm"><img border="0" src="${pageContext.request.contextPath}/img/kontakt_top.jpg"></a>
                 <br />
         </div>
@@ -40,6 +40,8 @@
         </div>
         <div id="info">
                 <!-- TUTAJ ZMIENIAMY ZAWARTOSC -->
+                <h1>Witaj w WebLibrary!</h1>
+                <hr />
                 <div class="legend">
                     <p>PESEL:</p>
                     <p>Hasło:</p>

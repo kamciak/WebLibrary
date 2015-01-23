@@ -7,5 +7,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-Wylogowano poprawnie... Przekierowuje do strony glownej..
+<h2>Wylogowano poprawnie... Przekierowuje do strony glownej..</h2>
 <c:redirect url="/index.htm"/>

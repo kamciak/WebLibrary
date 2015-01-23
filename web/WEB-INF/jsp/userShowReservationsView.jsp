@@ -43,7 +43,7 @@
         <div id="info">
                 <!-- TUTAJ ZMIENIAMY ZAWARTOSC -->
                 <h1>Moje rezerwacje</h1>
-                
+                <hr />
                 
                 <div class="tableContainer" >
                 <table >

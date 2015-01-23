@@ -39,7 +39,7 @@
         </div>
         <div id="info">
                 <!-- TUTAJ ZMIENIAMY ZAWARTOSC -->
-                <h3>Zwrócono poprawnie książkę</h3>
+                <h3>Zwrócono książkę</h3>
                 <br />
                 <a href="paneladmin.htm">Powrót do panelu admina</a><br />
                 <br />

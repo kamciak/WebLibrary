@@ -42,7 +42,8 @@
         </div>
         <div id="info">
                 <!-- TUTAJ ZMIENIAMY ZAWARTOSC -->
-                <h3> Admin panel</h3>
+                <h1>Panel admina</h1>
+                <hr />
                 <center>
                     <a href="adminacceptreservation.htm"><img src="${pageContext.request.contextPath}/img/zaakceptuj_rezerwacje.jpg" /></a><br />
                     <br />

@@ -42,9 +42,10 @@
         </div>
         <div id="info">
                 <!-- TUTAJ ZMIENIAMY ZAWARTOSC -->
-                <h3>Logowanie nie powiodło się.</h3>
+                <h2>Logowanie nie powiodło się.</h2>
                 <br />
-                <h1>${loginMsg}</h1>
+                <h2>${loginMsg}</h2>
+                <br />
                 <a href="index.htm">Spróbuj ponownie</a><br />
                 <br />
         </div>

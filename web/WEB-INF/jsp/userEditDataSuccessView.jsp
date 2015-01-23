@@ -38,7 +38,7 @@
         </div>
         <div id="info">
                 <!-- TUTAJ ZMIENIAMY ZAWARTOSC -->
-                <h3>Edycja danych powiodła się.</h3>
+                <h3>Edycja danych zakończona sukcesem</h3>
                 <br />
                 <a href="paneluser.htm">Powrót do panelu admina</a><br />
                 <br />

@@ -38,7 +38,8 @@
         </div>
         <div id="info">
                 <!-- TUTAJ ZMIENIAMY ZAWARTOSC -->
-                <h3>Dodaj książkę</h3>
+                <h1>Dodaj książkę</h1>
+                <hr />
                 <div class="legend">
                     <p>Tytuł:</p>
                     <p>Autor:</p>

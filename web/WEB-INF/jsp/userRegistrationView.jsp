@@ -39,6 +39,8 @@
         </div>
         <div id="info">
             <!-- TUTAJ ZMIENIAMY ZAWARTOSC -->
+            <h1>Rejestracja</h1>
+            <hr />
             <div class="legend">
                 <p>Imię:</p>
                 <p>Nazwisko:</p>

@@ -37,7 +37,14 @@
         </div>
         <div id="info">
                 <!-- TUTAJ ZMIENIAMY ZAWARTOSC -->
-                <h3>Kontakt</h3>
+                <h1>Kontakt</h1>
+                <hr />
+                <br />
+                <p>Autorzy projektu:</p>
+                <ul class="contact">
+                    Kamil Gzyl <br />
+                    Tomasz Fielek<br />
+                </ul>
         </div>
         <div id="footer">
             <img border="0" src="${pageContext.request.contextPath}/img/stopka.jpg">

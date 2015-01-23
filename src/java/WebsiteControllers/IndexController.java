@@ -33,7 +33,7 @@ public class IndexController extends SimpleFormController{
      public IndexController(){
         setCommandClass(LoginData.class);
         setCommandName("login_data");
-        setSuccessView("userIndexSuccessView");
+        setSuccessView("userIndexFailureView");
         setFormView("index");
     }
     

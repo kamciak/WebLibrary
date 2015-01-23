@@ -39,6 +39,8 @@
         </div>
         <div id="info">
             <!-- TUTAJ ZMIENIAMY ZAWARTOSC -->
+            <h1>Edytuj dane</h1>
+            <hr />
             <div class="legend">
                 <p>PESEL:</p>
                 <p>Imię:</p>

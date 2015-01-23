@@ -43,8 +43,8 @@
         </div>
         <div id="info">
                 <!-- TUTAJ ZMIENIAMY ZAWARTOSC -->
-                <h1>Moje rezerwacje</h1>
-                
+                <h1>Moje wypożyczenia</h1>
+                <hr />
                 
                 <div class="tableContainer" >
                 <table >
