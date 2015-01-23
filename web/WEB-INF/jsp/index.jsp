@@ -40,7 +40,7 @@
         </div>
         <div id="info">
                 <!-- TUTAJ ZMIENIAMY ZAWARTOSC -->
-                <h1>Witaj w WebLibrary!</h1>
+                <h1>Witaj w WebLibrary! </h1>
                 <hr />
                 <div class="legend">
                     <p>PESEL:</p>
