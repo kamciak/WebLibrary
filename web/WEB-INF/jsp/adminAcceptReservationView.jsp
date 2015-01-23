@@ -55,13 +55,13 @@
                         <td></td>
                         <c:forEach items="${listOfReservations}" var="reservation">
                         <tr>
-                           <td><c:out value="${reservation.userpesel}"/></td>
-                           <td><c:out value="${reservation.username}"/></td>
-                           <td><c:out value="${reservation.booktitle}"/></td>
+                           <td><c:out value="${reservation.userPesel}"/></td>
+                           <td><c:out value="${reservation.userName}"/></td>
+                           <td><c:out value="${reservation.bookTitle}"/></td>
                            <td><c:out value="${reservation.author}"/></td>
                            <td><c:out value="${reservation.date}"/></td>
 
-                           <td><a href="adminacceptbookreservation.htm?$userpesel=${sessionScope.userPesel}&bookid=${book.id}"><c:out value="Zaakceptuj"/></a></td>
+                           <td><a href="adminacceptbookreservation.htm?userpesel=${sessionScope.userPesel}&bookid=${reservation.bookId}"><c:out value="Zaakceptuj"/></a></td>
                        </tr>
                     </c:forEach>
                     </tr>
