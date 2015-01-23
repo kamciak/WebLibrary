@@ -61,7 +61,7 @@
                            <td><c:out value="${borrowedbook.bookTitle}"/></td>
                            <td><c:out value="${borrowedbook.author}"/></td>
                            <td><c:out value="${borrowedbook.date}"/></td>
-                           <td><a href="adminreturnbook.htm?userpesel=${sessionScope.userPesel}&bookid=${borrowedbook.bookId}"><c:out value="Zwróć"/></a></td>
+                           <td><a href="adminreturnbook.htm?userpesel=${borrowedbook.userPesel}&bookid=${borrowedbook.bookId}"><c:out value="Zwróć"/></a></td>
                        </tr>
                     </c:forEach>
                     </tr>

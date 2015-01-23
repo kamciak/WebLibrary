@@ -31,9 +31,6 @@ public class AdminShowBookController extends AbstractController{
     protected ModelAndView handleRequestInternal(HttpServletRequest request, HttpServletResponse response) throws Exception {
         ModelAndView mv = new ModelAndView("adminShowBookView");
         List<Book> listOfBooks = universalService.getAllBooks();
-        for(Book book : listOfBooks){
-           System.out.println(book.getTitle()) ;
-        }
     
         mv.addObject("listOfBooks",listOfBooks);
         
