@@ -42,7 +42,7 @@
         </div>
         <div id="info">
                 <!-- TUTAJ ZMIENIAMY ZAWARTOSC -->
-                <h2>Logowanie nie powiodło się. </h2>
+                <h2>Logowanie nie powiodło się.</h2>
                 <br />
                 <h2>${loginMsg}</h2>
                 <br />
