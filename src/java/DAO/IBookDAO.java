@@ -38,4 +38,5 @@ public interface IBookDAO {
     
     ArrayList<Borrowings> getAllBorrowings();
     ArrayList<Borrowings> getBorrowingsByUser(String userPesel);
+    ArrayList<Borrowings> getFinishedBorrowingsByUser(String userPesel);
 }

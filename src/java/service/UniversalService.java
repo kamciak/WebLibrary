@@ -155,5 +155,9 @@ public class UniversalService {
     public ArrayList<Borrowings> getBorrowingsByUser(String userPesel){
         return bookDAO.getCurrentBorrowingsByUser(userPesel);
     }
+    
+    public ArrayList<Borrowings> getFinishedBorrowingsByUser(String userPesel){
+        return bookDAO.getFinishedBorrowingsByUser(userPesel);
+    }
 
 }
