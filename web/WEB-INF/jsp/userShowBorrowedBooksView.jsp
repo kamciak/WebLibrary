@@ -1,8 +1,9 @@
 <%-- 
-    Document   : userShowReservationsView
-    Created on : 2015-01-22, 19:47:53
+    Document   : userShowBorrowedBooksView
+    Created on : 2015-01-23, 19:07:09
     Author     : Kamciak
 --%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>
@@ -50,12 +51,12 @@
                     <tr>
                         <td>Tytuł</td>
                         <td>Autor</td>
-                        <td>Data rezerwacji</td>
-                        <c:forEach items="${listOfReservations}" var="reservation">
+                        <td>Data wypożyczenia</td>
+                        <c:forEach items="${listOfBorrowings}" var="borrowedBook">
                         <tr>
-                           <td><c:out value="${reservation.bookTitle}"/></td>
-                           <td><c:out value="${reservation.author}"/></td>
-                           <td><c:out value="${reservation.date}"/></td>
+                           <td><c:out value="${borrowedBook.bookTitle}"/></td>
+                           <td><c:out value="${borrowedBook.author}"/></td>
+                           <td><c:out value="${borrowedBook.date}"/></td>
                        </tr>
                     </c:forEach>
                     </tr>

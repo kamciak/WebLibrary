@@ -48,7 +48,7 @@
                     <br />
                     <a href="usershowreservations.htm"><img src="${pageContext.request.contextPath}/img/moje_rezerwacje.jpg" /></a><br />
                     <br />
-                    <a href="usershowborrowings.htm"><img src="${pageContext.request.contextPath}/img/moje_wypozyczenia.jpg" /></a><br />
+                    <a href="usershowborrowedbooks.htm"><img src="${pageContext.request.contextPath}/img/moje_wypozyczenia.jpg" /></a><br />
                     <br />
                     <a href="usershowhistory.htm"><img src="${pageContext.request.contextPath}/img/historia.jpg" /></a><br />
                     <br />
