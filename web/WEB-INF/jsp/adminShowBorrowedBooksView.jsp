@@ -1,6 +1,6 @@
 <%-- 
-    Document   : panelAdminView
-    Created on : 2015-01-20, 20:41:42
+    Document   : adminShowBorrowedBooksView
+    Created on : 2015-01-23, 20:48:54
     Author     : Kamciak
 --%>
 
@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <c:if test="${sessionScope.userPesel == null || sessionScope.userGrants != true}">
+    <c:if test="${sessionScope.userGrants==null || sessionScope.userGrants != true}">
             <c:redirect url="index.htm"/>
    </c:if>
     <div id="content">
@@ -42,26 +42,33 @@
         </div>
         <div id="info">
                 <!-- TUTAJ ZMIENIAMY ZAWARTOSC -->
-                <h3> Admin panel</h3>
-                <center>
-                    <a href="adminacceptreservation.htm"><img src="${pageContext.request.contextPath}/img/zaakceptuj_rezerwacje.jpg" /></a><br />
-                    <br />
-                    <a href="adminshowborrowedbooks.htm"><img src="${pageContext.request.contextPath}/img/zwrot_ksiazki.jpg" /></a><br />
-                    <br />
-                    <a href="addbook.htm"><img src="${pageContext.request.contextPath}/img/dodaj_ksiazke.jpg" /></a><br />
-                    <br />
-                    <a href="adminshowbook.htm"><img src="${pageContext.request.contextPath}/img/wyswietl_ksiazki.jpg" /></a><br />
-                    <br />
-                    <a href="adminshowusers.htm"><img src="${pageContext.request.contextPath}/img/wyswietl_uzytkownikow.jpg" /></a><br />
-                    <br />
+                <h1>Edit book2</h1>
+                
+                
+                <div class="tableContainer" >
+                <table >
+                    <tr>
+                        <td>Pesel</td>
+                        <td>Imię</td>
+                        <td>Tytuł</td>
+                        <td>Autor</td>
+                        <td>Data wypożyczenia</td>
+                        <td></td>
+                        <c:forEach items="${listOfBorrowings}" var="borrowedbook">
+                        <tr>
+                           <td><c:out value="${borrowedbook.userPesel}"/></td>
+                           <td><c:out value="${borrowedbook.userName}"/></td>
+                           <td><c:out value="${borrowedbook.bookTitle}"/></td>
+                           <td><c:out value="${borrowedbook.author}"/></td>
+                           <td><c:out value="${borrowedbook.date}"/></td>
+                           <td><a href="adminreturnbook.htm?userpesel=${sessionScope.userPesel}&bookid=${borrowedbook.bookId}"><c:out value="Zwróć"/></a></td>
+                       </tr>
+                    </c:forEach>
+                    </tr>
                     
-                    
-                </center>
-                
-                
-                
-                
-                <a href="logout.htm">Wyloguj</a>
+                </table>
+            </div>
+                <a href="paneladmin.htm">Powrót</a>
         </div>
         <div id="footer">
             <img border="0" src="${pageContext.request.contextPath}/img/stopka.jpg">

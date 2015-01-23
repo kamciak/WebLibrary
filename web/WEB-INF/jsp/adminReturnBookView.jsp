@@ -1,12 +1,13 @@
 <%-- 
-    Document   : panelAdminView
-    Created on : 2015-01-20, 20:41:42
+    Document   : adminReturnBookView
+    Created on : 2015-01-23, 20:54:32
     Author     : Kamciak
 --%>
 
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
     "http://www.w3.org/TR/html4/loose.dtd">
 
@@ -16,11 +17,7 @@
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
     <title>WebLibrary</title>
 </head>
-
 <body>
-    <c:if test="${sessionScope.userPesel == null || sessionScope.userGrants != true}">
-            <c:redirect url="index.htm"/>
-   </c:if>
     <div id="content">
         <div id="menu_top">
                 <a href="index.htm"><img border="0" src="${pageContext.request.contextPath}/img/strona_glowna_top.jpg"></a>
@@ -42,26 +39,10 @@
         </div>
         <div id="info">
                 <!-- TUTAJ ZMIENIAMY ZAWARTOSC -->
-                <h3> Admin panel</h3>
-                <center>
-                    <a href="adminacceptreservation.htm"><img src="${pageContext.request.contextPath}/img/zaakceptuj_rezerwacje.jpg" /></a><br />
-                    <br />
-                    <a href="adminshowborrowedbooks.htm"><img src="${pageContext.request.contextPath}/img/zwrot_ksiazki.jpg" /></a><br />
-                    <br />
-                    <a href="addbook.htm"><img src="${pageContext.request.contextPath}/img/dodaj_ksiazke.jpg" /></a><br />
-                    <br />
-                    <a href="adminshowbook.htm"><img src="${pageContext.request.contextPath}/img/wyswietl_ksiazki.jpg" /></a><br />
-                    <br />
-                    <a href="adminshowusers.htm"><img src="${pageContext.request.contextPath}/img/wyswietl_uzytkownikow.jpg" /></a><br />
-                    <br />
-                    
-                    
-                </center>
-                
-                
-                
-                
-                <a href="logout.htm">Wyloguj</a>
+                <h3>Zwrócono poprawnie książkę</h3>
+                <br />
+                <a href="paneladmin.htm">Powrót do panelu admina</a><br />
+                <br />
         </div>
         <div id="footer">
             <img border="0" src="${pageContext.request.contextPath}/img/stopka.jpg">
