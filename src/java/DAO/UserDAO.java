@@ -85,6 +85,19 @@ public class UserDAO implements IUserDAO {
         String query = "SELECT * FROM APP.WL_USER";
         return (ArrayList<User>) jdbcTemplate.query(query, new UserMapper(), new Object[]{});
     }
+    
+    @Override
+    public Boolean loginAvailable(String userPesel){
+        String query = "SELECT * FROM APP.WL_USER WHERE USRLOGIN=?";
+        User user = null;
+        try {
+            user = (User) jdbcTemplate.queryForObject(query, new UserMapper(), new Object[]{userPesel});
+        } catch (Exception ex) {
+            System.out.println("Could not get User form database for login ["
+                    + userPesel + "]");
+        }
+        return user == null;
+    }
 
     
     @Override
