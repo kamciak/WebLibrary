@@ -183,10 +183,10 @@ public class BookDAO implements IBookDAO {
     
     @Override
     public ArrayList<Borrowings> getCurrentBorrowingsByUser(String userPesel){
-       String query = "SELECT * FROM APP.BORROW"
-                        + " INNER JOIN WL_USER on USRID = USRLOGIN"
-                        + " INNER JOIN BOOK on BOOKID = ID "
-                        + " WHERE USRID = ? AND DELETED=false";
+       String query = "SELECT * FROM APP.BORROW B"
+                        + " INNER JOIN WL_USER U on B.USRID = U.USRLOGIN"
+                        + " INNER JOIN BOOK BK on B.BOOKID = BK.ID"
+                        + " WHERE B.USRID = ? AND B.DELETED=false";
        return (ArrayList<Borrowings>) jdbcTemplate.query(query, new BorrowingsMapper(), new Object[]{userPesel} );
     }
     
@@ -198,10 +198,10 @@ public class BookDAO implements IBookDAO {
     
     @Override
     public ArrayList<Borrowings> getBorrowingsByUser(String userPesel){
-       String query = "SELECT * FROM APP.BORROW"
-                        + " INNER JOIN WL_USER on USRID = USRLOGIN"
-                        + " INNER JOIN BOOK on BOOKID = ID "
-                        + " WHERE USRID = ?";
+       String query = "SELECT * FROM APP.BORROW B"
+                        + " INNER JOIN WL_USER U on B.USRID = U.USRLOGIN"
+                        + " INNER JOIN BOOK BK on B.BOOKID = BK.ID"
+                        + " WHERE U.USRID = ?";
        return (ArrayList<Borrowings>) jdbcTemplate.query(query, new BorrowingsMapper(), new Object[]{userPesel} );
     }
     
