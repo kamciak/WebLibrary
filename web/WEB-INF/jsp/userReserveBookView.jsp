@@ -38,7 +38,7 @@
         </div>
         <div id="info">
                 <!-- TUTAJ ZMIENIAMY ZAWARTOSC -->
-                <h3>Wypozyczono poprawnie ksiazke</h3>
+                <h3>Zarezerwowano poprawnie książkę</h3>
                 <br />
                 <a href="paneluser.htm">Powrót do panelu użytkownika</a><br />
                 <br />
