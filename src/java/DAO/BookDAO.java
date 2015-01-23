@@ -150,9 +150,10 @@ public class BookDAO implements IBookDAO {
     @Override
     public void removeBorrowings(String userPesel, Integer bookId)
     {
-        String query = "UPDATE BORROW set DELETED=true WHERE USRID = ? AND BOOKID = ?";
+        String query = "UPDATE BORROW set DELETED=true, RETURNDATE = ? WHERE USRID = ? AND BOOKID = ?";
         
         jdbcTemplate.update(query, new Object[] {
+        new Date(),
         userPesel,
         bookId,
         });
@@ -179,7 +180,10 @@ public class BookDAO implements IBookDAO {
     
     @Override
     public ArrayList<Borrowings> getAllCurrentBorrowings(){
-       String query = "SELECT * FROM APP.BORROW WHERE DELETED=false";
+       String query = "SELECT * FROM APP.BORROW B"
+                        + " INNER JOIN WL_USER U on B.USRID = U.USRLOGIN"
+                        + " INNER JOIN BOOK BK on B.BOOKID = BK.ID"
+                        + " WHERE DELETED=false";
        return (ArrayList<Borrowings>) jdbcTemplate.query(query, new BorrowingsMapper(), new Object[]{} );
     }
     
@@ -205,7 +209,7 @@ public class BookDAO implements IBookDAO {
        String query = "SELECT * FROM APP.BORROW B"
                         + " INNER JOIN WL_USER U on B.USRID = U.USRLOGIN"
                         + " INNER JOIN BOOK BK on B.BOOKID = BK.ID"
-                        + " WHERE U.USRID = ?";
+                        + " WHERE B.USRID = ?";
        return (ArrayList<Borrowings>) jdbcTemplate.query(query, new BorrowingsMapper(), new Object[]{userPesel} );
     }
     
@@ -214,7 +218,7 @@ public class BookDAO implements IBookDAO {
         String query = "SELECT * FROM APP.BORROW B"
                         + " INNER JOIN WL_USER U on B.USRID = U.USRLOGIN"
                         + " INNER JOIN BOOK BK on B.BOOKID = BK.ID"
-                        + " WHERE U.USRID = ? AND B.DELETED=true";
+                        + " WHERE B.USRID = ? AND B.DELETED=true";
         return (ArrayList<Borrowings>) jdbcTemplate.query(query, new BorrowingsMapper(), new Object[]{userPesel} );
     }
     
@@ -271,6 +275,7 @@ public class BookDAO implements IBookDAO {
         resv.setUserName(rs.getString("USRNAME") );
         resv.setDate(rs.getDate("DATE"));
         resv.setDeleted(rs.getBoolean("DELETED"));
+        resv.setReturnDate(rs.getDate("RETURNDATE"));
         return resv;
       }
     }

@@ -6,12 +6,23 @@
 
 package BookPackage;
 
+import java.util.Date;
+
 /**
  *
  * @author Tomek
  */
 public class Borrowings extends Reservation {
     private Boolean _deleted;
+    private Date _returnDate;
+
+    public Date getReturnDate() {
+        return _returnDate;
+    }
+
+    public void setReturnDate(Date _returnDate) {
+        this._returnDate = _returnDate;
+    }
 
     public Boolean isDeleted() {
         return _deleted;

@@ -4,5 +4,6 @@ create table "APP".BORROW
 	USRID VARCHAR(11) not null,
 	BOOKID BIGINT not null,
 	DATE DATE not null,
-	DELETED BOOLEAN not null
+	DELETED BOOLEAN not null,
+        RETURNDATE DATE
 )
