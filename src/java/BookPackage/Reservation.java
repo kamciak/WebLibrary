@@ -7,7 +7,7 @@
 package BookPackage;
 
 /**
- *
+ * Klasa rezerwacji
  * @author Tomek
  */
 public class Reservation extends OperationBase {

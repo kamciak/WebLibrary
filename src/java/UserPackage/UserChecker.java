@@ -10,6 +10,13 @@ package UserPackage;
  * @author Kamil Gzyl
  */
 public class UserChecker {
+
+    /**
+     * Metoda sprawdzające czy wszystkie dane użytkownika zostały wprowadzone
+     * @param user Obiekt użytkownika
+     * @return True jeżeli wszystkie dane są dodane do obiektu User, w przeciwnym wypadku false
+     * @see User
+     */
     public static Boolean checkUser(User user){
      return gotAddress(user)&&gotCountry(user)
              &&gotName(user)
@@ -47,6 +54,11 @@ public class UserChecker {
         return !(user.getAddress().isEmpty() || user.getAddress()==null);
     }
     
+    /**
+     * Metoda sprawdzająca poprawność wprowadzonego numeru PESEL
+     * @param pesel Number PESEL
+     * @return True jeżeli PESEL poprawny, false w przeciwnym wypadku
+     */
     public static Boolean checkPesel(String pesel){
         if(pesel==null) return false;
         if (pesel.length() != 11) return false;

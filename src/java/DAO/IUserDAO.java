@@ -10,7 +10,7 @@ import UserPackage.User;
 import java.util.ArrayList;
 
 /**
- *
+ * 
  * @author Tomek
  */
 public interface IUserDAO {

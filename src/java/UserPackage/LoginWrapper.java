@@ -8,7 +8,7 @@ package UserPackage;
 import javax.servlet.http.Cookie;
 
 /**
- *
+ * Wrapper logowania
  * @author Kamil Gzyl
  */
 public class LoginWrapper {
@@ -26,6 +26,10 @@ public class LoginWrapper {
         this._is_logged = false;
     }
     
+    /**
+     * Metoda sprawdzające czy udało się zalogować użytkownika
+     * @return Wiadomość wyniku operacji logowania
+     */
     public String check(){
         if(_user != null){
             if(_user.getPassword().equals(_login_data.getPassword())){

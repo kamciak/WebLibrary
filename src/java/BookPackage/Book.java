@@ -7,11 +7,21 @@
 package BookPackage;
 
 /**
- *
+ * Klasa opisująca książkę
  * @author Tomek
  */
 public class Book {
     public Book(){}
+    
+    /**
+     * Konstruktor książki
+     * @param id ID książki
+     * @param title Tytuł książki
+     * @param author Autor książki
+     * @param isbn ISBN książki
+     * @param year Data wydania książki
+     * @param available Dostępność książki
+     */
     public Book(Integer id, String title, String author, String isbn, int year, Boolean available)
     {
         this._id = id;

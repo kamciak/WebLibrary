@@ -1,13 +1,25 @@
 package UserPackage;
 /**
- *
+ * Klasa użytkownika
  * @author Kamil Gzyl
  */
 public class User {
     public User(){}
     
-    
-    public User(String name, String surename, String pesel, String password, String country, String city , String post_code, String street, String phone_number, Boolean admin) throws InvalidDataException{
+    /**
+     * Konstruktor użytkownika
+     * @param name Imię użytkownika
+     * @param surename Nazwisko użytkownika
+     * @param pesel PESEL użytkownika
+     * @param password Hasło użytkownika
+     * @param country Kraj użytkownika
+     * @param city Miejscowość użytkownika
+     * @param post_code Kod pocztowy użytkownika
+     * @param street Ulica użytkownika
+     * @param phone_number Number telefonu użytkownika
+     * @param admin Prawa admina użytkownika
+     */
+    public User(String name, String surename, String pesel, String password, String country, String city , String post_code, String street, String phone_number, Boolean admin){
             _name = name;
             _surename = surename;
             _country = country;

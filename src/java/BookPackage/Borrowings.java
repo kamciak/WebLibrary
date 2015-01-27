@@ -9,7 +9,7 @@ package BookPackage;
 import java.util.Date;
 
 /**
- *
+ * Klasa wypożyczeń
  * @author Tomek
  */
 public class Borrowings extends Reservation {

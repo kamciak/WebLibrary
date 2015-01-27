@@ -6,7 +6,7 @@
 package UserPackage;
 
 /**
- *
+ * Klasa reprezentująca dane logowania.
  * @author Kamil Gzyl
  */
 public class LoginData {

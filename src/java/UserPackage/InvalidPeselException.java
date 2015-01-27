@@ -6,7 +6,7 @@ package UserPackage;
  * and open the template in the editor.
  */
 /**
- *
+ * 
  * @author Kamil Gzyl
  */
 public class InvalidPeselException extends InvalidDataException {

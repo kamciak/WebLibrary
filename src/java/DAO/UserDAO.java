@@ -5,7 +5,6 @@
  */
 package DAO;
 
-import UserPackage.InvalidDataException;
 import UserPackage.InvalidPeselException;
 import UserPackage.User;
 import java.sql.ResultSet;
@@ -15,7 +14,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.sql.DataSource;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.simple.ParameterizedRowMapper;
 
 /**
@@ -30,6 +28,10 @@ public class UserDAO implements IUserDAO {
         this.jdbcTemplate = new JdbcTemplate(dataSource);
     }
 
+    /**
+     * Metoda dodająca użytkownika do bazy
+     * @param user Obiekt użytkownika
+     */
     @Override
     public void addUser(User user) {
         String query = "INSERT INTO WL_USER (USRLOGIN, USRPASSWORD, USRNAME, USRSURNAME, USRCOUNTRY, USRCITY, USRSTREET, USRPOSTCODE, USRPHONE, USRISADMIN) "
@@ -106,9 +108,18 @@ public class UserDAO implements IUserDAO {
         jdbcTemplate.update(DELETE, userPesel);
     }
     
-    
+    /**
+     * Klasa Mappera informacji z bazy na obiekt użytkownika
+     */
     protected static final class UserMapper implements ParameterizedRowMapper {
 
+        /**
+         * Metoda mapująca dane bazodanowe na obiekt użytkownika
+         * @param rs Dane otrzymane z bazy
+         * @param rowNum 
+         * @return Obiekt użytkownika
+         * @throws SQLException 
+         */
         @Override
         public User mapRow(ResultSet rs, int rowNum)
                 throws SQLException {

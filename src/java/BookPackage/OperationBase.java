@@ -9,7 +9,7 @@ package BookPackage;
 import java.util.Date;
 
 /**
- *
+ * Abstrakcyjna klasa definiująca operacje na książkach
  * @author Tomek
  */
 public abstract class OperationBase {
