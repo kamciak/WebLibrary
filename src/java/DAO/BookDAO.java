@@ -243,12 +243,12 @@ public class BookDAO implements IBookDAO {
       throws SQLException 
       {
         Reservation resv = new Reservation();
-        resv.setUserPesel(rs.getString("USRID") );
-        resv.setBookId(rs.getInt("BOOKID") );
-        resv.setBookTitle(rs.getString("TITLE") );
-        resv.setAuthor(rs.getString("AUTHOR") );
-        resv.setUserName(rs.getString("USRNAME") );
-        resv.setDate(rs.getDate("DATE"));
+        resv.setUserPesel( rs.getString("USRID") );
+        resv.setBookId( rs.getInt("BOOKID") );
+        resv.setBookTitle( rs.getString("TITLE") );
+        resv.setAuthor( rs.getString("AUTHOR") );
+        resv.setUserName( rs.getString("USRNAME") );
+        resv.setDate( rs.getDate("DATE"));
         
         return resv;
       }
